@@ -1,0 +1,129 @@
+ /* label color */
+   .input-field label {
+     color: #9e9e9e;
+     font-style: italic;
+
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #f48fb1;
+     font-style: normal;
+   }
+
+   .input-field input[type=password]:focus + label {
+     color: #f48fb1;
+     font-style: normal;
+   }
+
+   .input-field input[type=radio]:focus + label {
+     color: #f48fb1;
+     font-style: normal;
+   }
+
+   .input-field input[type=date]:focus:not([readonly]) + label {
+     color: #f48fb1;
+     font-style: normal;
+   }
+
+   
+   
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #f48fb1;
+     box-shadow: 0 1px 0 0 #f48fb0;
+   }
+
+   .input-field input[type=password]:focus {
+     border-bottom: 1px solid #f48fb1;
+     box-shadow: 0 1px 0 0 #f48fb0;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #f48fb1;
+     box-shadow: 0 1px 0 0 #f48fb1;
+   }
+
+   .input-field input[type=password].valid {
+     border-bottom: 1px solid #f48fb1;
+     box-shadow: 0 1px 0 0 #f48fb1;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #f48fb1;
+     box-shadow: 0 1px 0 0 #f48fb1;
+   }
+
+   .input-field input[type=password].invalid {
+     border-bottom: 1px solid #f48fb1;
+     box-shadow: 0 1px 0 0 #f48fb1;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #f48fb1;
+   }
+    .headerDivider {
+     border-left:3px solid #38546d;  
+     height:70px;
+     position:relative;
+     right:100px;
+     top:25px; 
+    }
+.italic-text {
+    font-style: italic;
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: #fafafa;
+  padding: 0;
+  max-height: auto;
+  max-width: 400px;
+  margin: auto;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  border-radius: 13px;
+  will-change: top, opacity;
+}
+
+
+h5 {
+font-style: italic;
+}
+
+h2{
+  font-style: italic;
+  color: #f06292;
+}
+
+h1{
+  font-style: italic;
+  text-shadow: -2px -2px 1px #000;
+}
+
+h3{
+  font-style: italic;
+  color: #f06292;
+}
+
+p{
+  font-style: italic;
+  font-size: 14pt;
+  color: #757575;
+}
+
+
+
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
