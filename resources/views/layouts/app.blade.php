@@ -6,11 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Laravel</title>
-
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
     <link rel=stylesheet href="css/materialize.css">
   	<link rel=stylesheet href="css/main.css">
     <link rel="stylesheet" href="css/objfon.css">
+    <style>
+    body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+    </style>
 
 </head>
 <body id="app-layout">
@@ -54,7 +66,7 @@
                                 {{ Auth::user()->name }} <i class="material-icons right">arrow_drop_down</i>
                             </a>
                         </li>
-                        <li><a data-target="modal2" class="modal-trigger"><i class="material-icons right">shopping_cart</i></a></li>
+                                                    <li><a data-target="modal2" class="modal-trigger"><i class="material-icons right">shopping_cart</i></a></li>
                     @endif
                 </ul>
               </div>
@@ -83,9 +95,55 @@
             </ul>
         </div>
     </nav>
+    <div class="modal" id="modal2">
+    <div class="modal-content">
+    <div>
+    	<div class="center">
+               		<div class="row">
+              			<div class="col s2">
+                  			<i class="material-icons medium" style="color:#f48fb1;">perm_identity</i>
+              			</div>
+              			<div class="col s10 left-align" style="margin-top:15px; color:#f48fb1;">
+                			<h4>Carrito</h4>
+              			</div>
+            		</div>
+                    <div>
+                        <h3>En construcción</h3>
+                    </div>
 
+    	</div>
+    </div>
+    </div>
+    </div>
+    <main>
     @yield('content')
 
+  </main>
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Pink Feelin'</h5>
+            <p class="grey-text text-lighten-4"> Atuendos, accesorios y productos de belleza para dama en un solo lugar y a un súper precio... </p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <div class="row" > <br>
+                                             <a href="https://www.facebook.com/PinkFeelin/"><img class="responsive-img" src="images/facebook.png" height="15%" width="15%"></a>
+                                             <a href="https://plus.google.com/"><img class="responsive-img" src="images/googleplus.png" height="15%" width="15%"></a>
+                                             <a href="https://es.pinterest.com/"><img class="responsive-img" src="images/pinterest.png" height="15%" width="15%"></a>
+                                             <a href="https://www.tumblr.com/"><img class="responsive-img" src="images/tumblr.png" height="15%" width="15%"></a>
+                                             <a href="https://twitter.com/"><img class="responsive-img" src="images/twitter.png" height="15%" width="15%"></a>
+                                        </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container center">
+          © 2016 Pink Feelin'
+
+        </div>
+      </div>
+    </footer>
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
