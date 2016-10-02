@@ -7,11 +7,11 @@
 
     <title>Laravel</title>
     <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
-    <link rel=stylesheet href="css/materialize.css">
-  	<link rel=stylesheet href="css/main.css">
-    <link rel="stylesheet" href="css/objfon.css">
+    <link rel=stylesheet href="/css/materialize.css">
+  	<link rel=stylesheet href="/css/main.css">
+    <link rel="stylesheet" href="/css/objfon.css">
     <style>
     body {
     display: flex;
@@ -128,11 +128,11 @@
           </div>
           <div class="col l4 offset-l2 s12">
             <div class="row" > <br>
-                                             <a href="https://www.facebook.com/PinkFeelin/"><img class="responsive-img" src="images/facebook.png" height="15%" width="15%"></a>
-                                             <a href="https://plus.google.com/"><img class="responsive-img" src="images/googleplus.png" height="15%" width="15%"></a>
-                                             <a href="https://es.pinterest.com/"><img class="responsive-img" src="images/pinterest.png" height="15%" width="15%"></a>
-                                             <a href="https://www.tumblr.com/"><img class="responsive-img" src="images/tumblr.png" height="15%" width="15%"></a>
-                                             <a href="https://twitter.com/"><img class="responsive-img" src="images/twitter.png" height="15%" width="15%"></a>
+                                             <a href="https://www.facebook.com/PinkFeelin/"><img class="responsive-img" src="/images/facebook.png" height="15%" width="15%"></a>
+                                             <a href="https://plus.google.com/"><img class="responsive-img" src="/images/googleplus.png" height="15%" width="15%"></a>
+                                             <a href="https://es.pinterest.com/"><img class="responsive-img" src="/images/pinterest.png" height="15%" width="15%"></a>
+                                             <a href="https://www.tumblr.com/"><img class="responsive-img" src="/images/tumblr.png" height="15%" width="15%"></a>
+                                             <a href="https://twitter.com/"><img class="responsive-img" src="/images/twitter.png" height="15%" width="15%"></a>
                                         </div>
           </div>
         </div>
