@@ -22,7 +22,7 @@
                             <div class="input-field col s6">
                                 <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
                                 <i class="material-icons prefix">account_circle</i>
-                                <input type="text" id="name" class="validate" >
+                                <input type="text" id="name" class="validate" name="name" value="{{old('name')}}">
                                 <label for="name" class="left-align">Nombre</label>
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -36,7 +36,7 @@
                             <div class="input-field col s6">
                                 <!-- <input id="lastname" type="text" class="form-control" name="lastname" value="{{ old('lastname') }}"> -->
                                 <i class="material-icons prefix">account_circle</i>
-                                <input type="text" id="lastname" class="validate" >
+                                <input type="text" id="lastname" class="validate" name="lastname" value="{{old('lastname')}}" >
                                 <label for="lastname" class="left-align">Apellido</label>
                                 @if ($errors->has('lastname'))
                                     <span class="help-block">
@@ -50,7 +50,7 @@
                             <div class="input-field col s6">
                                 <!-- <input id="lastname" type="text" class="form-control" name="lastname" value="{{ old('lastname') }}"> -->
                                 <i class="material-icons prefix">account_circle</i>
-                                <input type="text" id="telefono" class="validate" >
+                                <input type="text" id="telefono" class="validate" name="telefono" value="{{old('telefono')}}">
                                 <label for="telefono" class="left-align">Telefono</label>
                                 @if ($errors->has('telefono'))
                                     <span class="help-block">
@@ -64,11 +64,11 @@
                             <div class="input-field col s6">
                               <label>Sexo</label><br>
                                 <p>
-                                  <input class="with-gap" name="sexo" type="radio" id="hombre" />
+                                  <input class="with-gap" name="sexo" type="radio" id="hombre" value="hombre" />
                                   <label for="hombre">Hombre</label>
                                 </p>
                                 <p>
-                                  <input class="with-gap" name="sexo" type="radio" id="mujer" />
+                                  <input class="with-gap" name="sexo" type="radio" id="mujer" value="mujer" />
                                   <label for="mujer">Mujer</label>
                                 </p>
                             </div>
@@ -77,7 +77,7 @@
                         <div class="form-group{{ $errors->has('fecha_nac') ? ' has-error' : '' }}">
                             <div class="input-field col s12">
                               <i class="material-icons prefix">today</i>
-                              <input type="date" class="datepicker" id="fecha">
+                              <input type="date" class="datepicker" id="fecha" name="fecha_nac" value="{{old('fecha_nac')}}">
                               <label for="fecha" class="left-align">Dia de Nacimiento</label>
                             </div>
                         </div>
@@ -87,7 +87,7 @@
                             <div class="input-field col s12">
                                 <!-- <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}"> -->
                                 <i class="material-icons prefix">email</i>
-                                <input type="text" id="email" class="validate" >
+                                <input type="text" id="email" class="validate" name="email" value="{{old('email')}}">
                                 <label for="email" class="left-align">E-mail</label>
 
                                 @if ($errors->has('email'))
@@ -104,7 +104,7 @@
                             <div class="input-field col s6">
                                 <!-- <input id="password" type="password" class="form-control" name="password"> -->
                                 <i class="material-icons prefix">lock</i>
-                  	        		<input type="password" id="password" class="validate">
+                  	        		<input type="password" id="password" class="validate" name="password">
                   	        		<label for="password" class="left-align" >Contraseña</label>
 
                                 @if ($errors->has('password'))
@@ -121,7 +121,7 @@
                             <div class="input-field col s6">
                                 <!-- <input id="password-confirm" type="password" class="form-control" name="password_confirmation"> -->
                                 <i class="material-icons prefix">lock_outline</i>
-                                <input type="password" id="password_confirmation" class="validate">
+                                <input type="password" id="password_confirm" class="validate" name="password_confirmation">
                                 <label for="password_confirmation" class="left-align" >Repetir Contraseña</label>
                                 @if ($errors->has('password_confirmation'))
                                     <span class="help-block">
