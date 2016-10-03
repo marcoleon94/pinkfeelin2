@@ -1,16 +1,6 @@
-<?php
-require('menu.php');
-require('footer.php');
-?>
-<html>
-	<link rel=stylesheet href="css/materialize.css">
-	<link rel=stylesheet href="css/main.css">
-    <link rel="stylesheet" href="css/objfon.css">
- <head>
-   <title>Pink Feelin'</title>
- </head>
- <body>
-     <?php menu("vestidos.php"); ?>
+@extends('layouts.app')
+
+@section('content')
      <div class="container">
          <div class="center">
             <h2>Artículo X</h2>
@@ -24,7 +14,7 @@ require('footer.php');
                   <div class="card bordered pink darken-2 " style=" border-radius: 13px;">
                     <div class="card-content white-text pink lighten-3">
                       <span class="card-title">Vestido X</span>
-                      <p>Modelo unitalla. 
+                      <p>Modelo unitalla.
                           <br>
                               Vestido negro floreado.
                           <br>
@@ -53,24 +43,9 @@ require('footer.php');
                     <div class="card-action">
                       <a href="#">Añadir a tu carrito</a>
                     </div>
-                  </div>       
-                </div>      
+                  </div>
+                </div>
              </div>
          </div>
      </div>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/materialize.min.js"></script>
-    <?php footer(); ?>
-    
-    <script>
-        $( document ).ready(function(){
-         $(".dropdown-button").dropdown();
-        $(".button-collapse").sideNav();
-        $('.modal-trigger').leanModal(); 
-        $('select').material_select();
-
-        });
-        
-    </script>
- </body>
-</html>
+@endsection

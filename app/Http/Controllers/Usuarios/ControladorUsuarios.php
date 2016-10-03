@@ -34,4 +34,7 @@ class ControladorUsuarios extends Controller
     public function pdbelleza(){
       return view('pdbelleza');
     }
+    public function articulo(){
+      return view('articulo');
+    }
 }

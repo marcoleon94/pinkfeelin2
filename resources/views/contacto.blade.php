@@ -1,19 +1,5 @@
-<?php 
-require("menu.php");
-require("footer.php");
-?>
-<html lang="es">
-	<link rel=stylesheet href="css/materialize.css">
-	<link rel=stylesheet href="css/main.css">
-    <link rel="stylesheet" href="css/objfon.css">
- <head>
-    <meta charset="UTF-8">
-    <title>Contacto</title>
- </head>
- <body>
-    <div class="menu">
-        <?php menu("contacto.php"); ?>
-    </div>
+@extends('layouts.app')
+@section('content')
      <div class="container">
          <div class="center">
             <h2>Contáctanos</h2>
@@ -23,13 +9,13 @@ require("footer.php");
                 <div class="col s4">
                     <div class="card bordered" style="margin:5% auto; max-width:400px; border-radius: 13px;">
                         <div class="card-header" style="background-color: #f48fb1; color: white; border-top-left-radius: 13px; border-top-right-radius: 13px; padding-left: 10px;">
-                            <div class="row">   
+                            <div class="row">
                                 <div class="col s12 left-align">
                                     <h5>Redes Sociales</h5>
                                 </div>
-                            </div> 
+                            </div>
                         </div>
-                
+
                         <div class="card-content" style="padding-left: 30px; padding-right: 30px; height: 350px;">
                                 <div class="row"><p>Contáctanos y síguenos en cualquiera de las siguientes redes sociales.</p></div>
                                     <div class="row" > <br> <br> <br>
@@ -47,13 +33,13 @@ require("footer.php");
                 <div class="col s4 ">
                     <div class="card bordered" style="margin:5% auto; max-width:400px; border-radius: 13px;">
                         <div class="card-header" style="background-color: #f48fb1; color: white; border-top-left-radius: 13px; border-top-right-radius: 13px; padding-left: 10px;">
-                            <div class="row">   
+                            <div class="row">
                                 <div class="col s12 left-align">
                                     <h5>Servicio al cliente</h5>
                                 </div>
-                            </div> 
+                            </div>
                         </div>
-                
+
                         <div class="card-content" style="padding-left: 30px; padding-right: 30px; height: 350px;">
                                 <div class="row">
                                     <p>Telefono: </p><p>449-192-17-27</p> <br>
@@ -64,7 +50,7 @@ require("footer.php");
                                     <button data-target="modal3" class="btn modal-trigger" type="submit" name="action" style="margin-top:30px;margin-left: 60px;">Sugerencias
                                         <i class="material-icons right">mode_edit</i>
                                     </button>
-                                </div>          
+                                </div>
                         </div>
                     </div>
                  </div>
@@ -73,13 +59,13 @@ require("footer.php");
                 <div class="col s4 ">
                     <div class="card bordered" style="margin:5% auto; max-width:400px; border-radius: 13px;">
                             <div class="card-header" style="background-color: #f48fb1; color: white; border-top-left-radius: 13px; border-top-right-radius: 13px; padding-left: 10px;">
-                                <div class="row">   
+                                <div class="row">
                                     <div class="col s12 left-align">
                                         <h5>Direcciones</h5>
                                     </div>
-                                </div> 
+                                </div>
                             </div>
-                    
+
                             <div class="card-content" style="padding-left: 30px; padding-right: 30px; height: 350px;">
                                     <div class="row">
                                         <p>Local 1: </p><p>Del Carmen 420-422, Colonia del Carmen, Aguascalientes, Ags.</p><br>
@@ -89,19 +75,19 @@ require("footer.php");
                             </div>
                     </div>
                 </div>
-                
+
             </div>
             <div class="row">
                 <div class="col s12">
                     <div class="card bordered" style=" border-radius: 13px;">
                             <div class="card-header" style="background-color: #f48fb1; color: white; border-top-left-radius: 13px; border-top-right-radius: 13px; padding-left: 10px;">
-                                <div class="row">   
+                                <div class="row">
                                     <div class="col s12 left-align">
                                         <h5>Localízanos</h5>
                                     </div>
-                                </div> 
+                                </div>
                             </div>
-                    
+
                             <div class="card-content">
                                     <div id="map" style="width:100%;height:500px"></div>
                             </div>
@@ -110,22 +96,20 @@ require("footer.php");
             </div>
         </div>
     </div>
-
-
 <div class="modal" id="modal3">
     <div class="modal-content">
         <div class="page-login">
             <div class="center">
-                
-                        <div class="row">   
+
+                        <div class="row">
                             <div class="col s2">
                                 <i class="material-icons medium" style="color:#f48fb1;">mode_edit</i>
                             </div>
                             <div class="col s10 left-align" style="margin-top:15px; color:#f48fb1;">
                                 <h4>Mandanos tus Comentarios</h4>
                             </div>
-                        </div> 
-                    
+                        </div>
+
                         <form>
                                 <div class="row">
                                     <div class="input-field col s12">
@@ -145,10 +129,6 @@ require("footer.php");
         </div>
     </div>
 </div>
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/materialize.min.js"></script>
-    
     <script>
             function myMap() {
               var myCenter = new google.maps.LatLng(21.8833,-102.3);
@@ -167,20 +147,4 @@ require("footer.php");
         </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?callback=myMap&key=AIzaSyADpZK_84nLc2YEQKAwFyX1__uB_aMqks8" type="text/javascript"></script>
-
-
-
-    
-    <div class="footer">
-        <?php footer(); ?>
-    </div>
-    <script>
-        $( document ).ready(function(){
-            $(".dropdown-button").dropdown();
-            $(".button-collapse").sideNav();
-            $('.modal-trigger').leanModal();
-        });
-        
-    </script>
- </body>
-</html>
+@endsection

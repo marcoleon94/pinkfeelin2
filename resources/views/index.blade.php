@@ -1,19 +1,6 @@
-<?php
-require("menu.php");
-require("footer.php")
-?>
-<html>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<link rel=stylesheet href="css/materialize.css">
-	<link rel=stylesheet href="css/main.css">
-    <link rel="stylesheet" href="css/objfon.css">
- <head>
-   <title>Pink Feelin'</title>
- </head>
- <body>
-     <div class="menu">
-        <?php menu("index.php"); ?>
-     </div>
+@extends('layouts.app')
+
+@section('content')
      <div class="container">
          <div class="center">
             <h2>El Detalle Perfecto</h2>
@@ -138,31 +125,5 @@ require("footer.php")
              </div>
          </div>
      </div>
-     <?php footer(); ?>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/materialize.min.js"></script>
 
-
-    <script>
-        $( document ).ready(function(){
-            $(".dropdown-button").dropdown();
-            $(".button-collapse").sideNav();
-            $('.modal-trigger').leanModal();
-            $('.carousel.carousel-slider').carousel({full_width: true});
-            $('.carousel').carousel({
-            dist:0,
-            shift:0,
-            padding:20,
-            });
-            $(".dropdown-button").dropdown();
-            autoplay()
-            function autoplay() {
-            $('#favoritos').carousel('next');
-            setTimeout(autoplay, 4000);
-            }
-
-        });
-
-    </script>
- </body>
-</html>
+@endsection

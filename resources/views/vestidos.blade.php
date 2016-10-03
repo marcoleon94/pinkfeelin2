@@ -1,16 +1,6 @@
-<?php
-require('menu.php');
-require('footer.php');
-?>
-<html>
-	<link rel=stylesheet href="css/materialize.css">
-	<link rel=stylesheet href="css/main.css">
-    <link rel="stylesheet" href="css/objfon.css">
- <head>
-   <title>Pink Feelin'</title>
- </head>
- <body>
-     <?php menu("vestidos.php"); ?>
+@extends('layouts.app')
+
+@section('content')
      <div class="container">
          <div class="center">
             <h2>Los Mejores Vestidos</h2>
@@ -25,7 +15,7 @@ require('footer.php');
                           <span class="card-title"><?php echo "Vestido $x"; ?></span>
                         </div>
                         <div class="card-content pink lighten-2">
-                          <p>Modelo unitalla. 
+                          <p>Modelo unitalla.
                               Vestido negro floreado.</p>
                                 <?php if($x%3==0) {?>
                                 <p style="text-decoration:line-through;">$450 MNX.</p>
@@ -42,24 +32,9 @@ require('footer.php');
                             <?php } ?>
                         </div>
                       </div>
-                 </div> 
+                 </div>
                  <?php } ?>
              </div>
          </div>
      </div>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/materialize.min.js"></script>
-    <?php footer(); ?>
-    
-    <script>
-        $( document ).ready(function(){
-         $(".dropdown-button").dropdown();
-        $(".button-collapse").sideNav();
-        $('.modal-trigger').leanModal();
-            
-
-        });
-        
-    </script>
- </body>
-</html>
+  @endsection
