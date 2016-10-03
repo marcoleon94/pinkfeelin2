@@ -160,7 +160,17 @@
             shift:0,
             padding:20,
             });
-            $(".dropdown-button").dropdown();
+            autoplay()
+            function autoplay() {
+            $('#favoritos').carousel('next');
+            setTimeout(autoplay, 4000);
+            }
+            $('.slider').slider({
+                interval:10000,
+                height: 700
+
+            });
+            $('select').material_select();
 
 
         });
