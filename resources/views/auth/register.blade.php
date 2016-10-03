@@ -145,16 +145,4 @@
 
     </div>
 </div>
-
-<script src="js/jquery.min.js"></script>
-  <script src="js/materialize.min.js"></script>
-  <script src="js/ui.datepicker-es.js"></script>
-
-  <script>
-  $(document).ready(function(){
-      $('.datepicker').pickadate({
-        firstDay: true
-    });
-  });
-  </script>
 @endsection
