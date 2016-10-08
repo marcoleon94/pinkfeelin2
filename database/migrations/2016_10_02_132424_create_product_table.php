@@ -21,7 +21,7 @@ class CreateProductTable extends Migration
           $table->string('marca',30);
           $table->string('descripcion',50);
           $table->integer('stock');
-          $table->binary('imagen');
+          $table->string('imagen');
         });
     }
 
