@@ -6,33 +6,23 @@
             <div class="divider"></div>
              <!-- Primera Sección-->
              <div class="row" style="margin:4%;">
-                 <?php for($x=1;$x<=9;$x++){ ?>
-                 <div class="col s4 m4">
-                    <div class="card">
-                        <div class="card-image">
-                          <a href="articulo.php"><img class="responsirve-img" src="images/producto.jpg"></a>
-                          <span class="card-title"><?php echo "Producto $x"; ?></span>
-                        </div>
-                        <div class="card-content pink lighten-2">
-                          <p>Labiales.
-                              Variedad de colores.</p>
-                                <?php if($x%3==0) {?>
-                                <p style="text-decoration:line-through;">$450 MNX.</p>
-                                <p>$300</p>
-                            <?php } else{ ?>
-                                <p>$300</p>
-                            <?php } ?>
-                        </div>
-                        <div class="card-action pink darken-4">
-                          <?php if($x%3==0){?>
-                            <a href="#">Añadir a tu carrito<span class="new badge" data-badge-caption="Oferta"></span></a>
-                            <?php }else{ ?>
-                          <a href="#">Añadir a tu carrito</a>
-                            <?php } ?>
-                        </div>
+               @foreach ($products as $product)
+               <div class="col s4 m4">
+                  <div class="card">
+                      <div class="card-image">
+                        <a href="/articulo/{{$product->id}}"><img class="responsirve-img" src="{{$product->imagen}}"></a>
+                        <span class="card-title amber-text text-darken-1">{{$product->nombre}}</span>
                       </div>
-                 </div>
-                 <?php } ?>
+                      <div class="card-content pink lighten-2">
+                        <p>{{$product->descripcion}} {{$product->marca}}</p>
+                              <p>${{$product->precio}} MNX.</p>
+                      </div>
+                      <div class="card-action pink darken-4">
+                        <a href="#">Añadir a tu carrito</a>
+                      </div>
+                    </div>
+               </div>
+               @endforeach
              </div>
          </div>
      </div>

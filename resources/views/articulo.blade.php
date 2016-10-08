@@ -1,24 +1,23 @@
 @extends('layouts.app')
-
 @section('content')
      <div class="container">
          <div class="center">
-            <h2>Artículo X</h2>
+            <h2>Tienda</h2>
             <div class="divider"></div>
              <!-- Primera Sección-->
              <div class="row">
                 <div class="col s5" style="margin: 10px;">
-                    <img class="responsive-img materialboxed" src="images/vestido.jpg" />
+                    <img class="responsive-img materialboxed" src="{{$product->imagen}}" />
                 </div>
                  <div class="col s6">
-                  <div class="card bordered pink darken-2 " style=" border-radius: 13px;">
+                  <div class="card bordered pink darken-2 " style="border-radius: 13px;">
                     <div class="card-content white-text pink lighten-3">
-                      <span class="card-title">Vestido X</span>
-                      <p>Modelo unitalla.
+                      <span class="card-title">{{$product->nombre}}</span>
+                      <p>{{$product->descripcion}}
                           <br>
-                              Vestido negro floreado.
+                              {{$product->marca}}
                           <br>
-                                $450 MNX.</p>
+                                ${{$product->precio}} MNX.</p>
                         <div class="row">
                             <div class="input-field col s3 push-s4">
                             <select>
@@ -31,12 +30,12 @@
                               <option value="7">7</option>
                               <option value="8">8</option>
                               <option value="9">9</option>
-                                <option value="10">10</option>
+                              <option value="10">10</option>
                             </select>
                             <label>Cantidad</label>
                             </div>
                             <div class="col s2 push-s4 ">
-                            <p>Disponibles: 4</p>
+                            <p>Disponibles: {{$product->stock}}</p>
                             </div>
                           </div>
                     </div>
@@ -47,5 +46,5 @@
                 </div>
              </div>
          </div>
-     </div>
+       </div>
 @endsection
