@@ -226,51 +226,44 @@
                                  </div>
 
                                  <div class="" id="dpay" style="display:none;">
-                                   <div class="form-group{{ $errors->has('nombre') ? ' has-error' : '' }}">
+                                   <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                        <div class="input-field col s6">
                                            <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
                                            <i class="material-icons prefix">account_circle</i>
-                                           <input type="text" id="nombre" class="validate" >
-                                           <label for="nombre" class="left-align">Nombre del Propietario</label>
-                                           @if ($errors->has('nombre'))
+                                           <input type="text" id="email" class="validate" >
+                                           <label for="email" class="left-align">Correo Electronico</label>
+                                           @if ($errors->has('email'))
                                                <span class="help-block">
-                                                   <strong>{{ $errors->first('nombre') }}</strong>
+                                                   <strong>{{ $errors->first('email') }}</strong>
                                                </span>
                                            @endif
                                        </div>
                                    </div>
 
+                                   <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                       <div class="input-field col s6">
+                                           <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
+                                           <i class="material-icons prefix">account_circle</i>
+                                           <input type="text" id="password" class="validate" >
+                                           <label for="password" class="left-align">Contraseña</label>
+                                           @if ($errors->has('password'))
+                                               <span class="help-block">
+                                                   <strong>{{ $errors->first('password') }}</strong>
+                                               </span>
+                                           @endif
+                                       </div>
+                                   </div>
 
 
                                  </div>
 
                                  <div class="" id="dox" style="display:none;">
-                                   <div class="form-group{{ $errors->has('nombre') ? ' has-error' : '' }}">
-                                       <div class="input-field col s6">
-                                           <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
-                                           <i class="material-icons prefix">account_circle</i>
-                                           <input type="text" id="nombre" class="validate" >
-                                           <label for="nombre" class="left-align">Nombre del Propietario</label>
-                                           @if ($errors->has('nombre'))
-                                               <span class="help-block">
-                                                   <strong>{{ $errors->first('nombre') }}</strong>
-                                               </span>
-                                           @endif
-                                       </div>
-                                   </div>
+                                   <div class="col s12">
 
-                                   <div class="form-group{{ $errors->has('nombre') ? ' has-error' : '' }}">
-                                       <div class="input-field col s6">
-                                           <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
-                                           <i class="material-icons prefix">account_circle</i>
-                                           <input type="text" id="nombre" class="validate" >
-                                           <label for="nombre" class="left-align">Nombre del Propietario</label>
-                                           @if ($errors->has('nombre'))
-                                               <span class="help-block">
-                                                   <strong>{{ $errors->first('nombre') }}</strong>
-                                               </span>
-                                           @endif
-                                       </div>
+
+                                   <a class="btn waves-effect waves-light center" type="submit" name="action" style="margin-top:30px; margin-right: 30px;">Imprimir Ticket
+                                     <i class="material-icons right">receipt</i>
+                                   </a>
                                    </div>
 
                                  </div>
