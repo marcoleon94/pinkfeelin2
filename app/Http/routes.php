@@ -21,6 +21,8 @@ Route::get('/bolsas', 'Usuarios\ControladorUsuarios@bolsas');
 Route::get('/pdbelleza', 'Usuarios\ControladorUsuarios@pdbelleza');
 Route::get('/articulo','Usuarios\ControladorUsuarios@articulo');
 Route::get('/realizarcompra', 'Usuarios\ControladorUsuarios@realizarcompra');
+Route::get('/carrito', 'Carrito\ControladorCarrito@index');
+Route::post('/carrito', 'Carrito\ControladorCarrito@carrito');
 
 Route::auth();
 
