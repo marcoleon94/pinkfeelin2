@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('telefono');
             $table->integer('tipo');
             $table->string('sexo',10);
-            $table->date('fecha_nac');
+            $table->string('fecha_nac');
             $table->rememberToken();
             $table->timestamps();
         });

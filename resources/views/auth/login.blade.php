@@ -25,7 +25,7 @@
                             <div class="input-field col s12">
                                 <!-- <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}"> -->
                                 <i class="material-icons prefix">account_circle</i>
-            	        					<input type="text" id="email" class="validate" >
+            	        					<input type="text" id="email" class="validate" name="email" >
             	        					<label for="email" class="left-align"> E-mail</label>
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -41,7 +41,7 @@
                             <div class="input-field col s12">
                                 <!-- <input id="password" type="password" class="form-control" name="password"> -->
                                 <i class="material-icons prefix">lock</i>
-            	        					<input type="password" id="password" class="validate">
+            	        					<input type="password" id="password" class="validate" name="password">
             	        					<label for="password" class="left-align">Contraseña</label>
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -51,22 +51,25 @@
                             </div>
                         </div>
 
-
+                      <div class="form-group">
+                            <div class="col s1 ofsset-s2">
+                                <div>
+                                        <input type="checkbox" name="remember" id="remember"/>
+                                        <label for="remember" class="left-align">Recuerdame</label>
+                                </div>
+                            </div>
+                        </div>
 
 
                         <div class="form-group">
-                            <div class="row">
-
-                              <div class="col s12">
-                                <button class="btn waves-effect waves-red right" type="submit" name="action" style="margin-top: 30px;">Iniciar Sesion
-                                  <i class="material-icons right">input</i>
-                                </button>
-                              </div>
-                            <!--  <div class="col s6">
-                                <a class=""  href="{{ url('/password/reset') }}">Olvide mi Contraseña</a>
-                              </div> -->
-
+                            <div>
+                              <button class="btn waves-effect waves-red right" type="submit" name="action" style="margin-top:30px;">Iniciar Sesion
+                                <i class="material-icons right">input</i>
+                              </button>
                             </div>
+                            <div class="col left">
+                            <a href="{{ url('/password/reset') }}" style="color:pink">Olvidaste tu contraseña?</a>
+                          </div>
                         </div>
                         </div>
                     </form>
