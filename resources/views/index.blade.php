@@ -116,11 +116,11 @@
              </div>
              <div class="row">
                  <div id="favoritos" class="carousel">
-                    <a class="carousel-item " href="articulo.php" ><img class="responsive-img" src="images/fav1.jpg"></a>
-                    <a class="carousel-item" href="articulo.php" ><img class="responsive-img" src="images/fav2.jpg"></a>
-                    <a class="carousel-item" href="articulo.php" ><img class="responsive-img " src="images/fav3.jpg"></a>
-                    <a class="carousel-item" href="articulo.php" ><img class="responsive-img " src="images/fav4.jpg"></a>
-                    <a class="carousel-item" href="articulo.php" ><img class="responsive-img " src="images/fav5.jpg"></a>
+                    <a class="carousel-item " href="/articulo/6" ><img class="responsive-img" src="images/fav1.jpg"></a>
+                    <a class="carousel-item" href="/articulo/7" ><img class="responsive-img" src="images/fav2.jpg"></a>
+                    <a class="carousel-item" href="/articulo/8" ><img class="responsive-img " src="images/fav3.jpg"></a>
+                    <a class="carousel-item" href="/articulo/9" ><img class="responsive-img " src="images/fav4.jpg"></a>
+                    <a class="carousel-item" href="/articulo/5" ><img class="responsive-img " src="images/fav5.jpg"></a>
                   </div>
              </div>
          </div>
