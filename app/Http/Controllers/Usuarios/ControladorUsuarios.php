@@ -23,21 +23,21 @@ class ControladorUsuarios extends Controller
       return view('atencion');
     }
     public function bolsas(){
-      return view('bolsas');
+      $products = \pinkfeelin\Models\Product\Product::all()->where('tipo', 2);
+      return view('bolsas')->with('products', $products);
     }
     public function vestidos(){
-      return view('vestidos');
+      $products = \pinkfeelin\Models\Product\Product::all()->where('tipo', 1);
+      return view('vestidos')->with('products', $products);
     }
     public function lentes(){
-      return view('lentes');
+      $products = \pinkfeelin\Models\Product\Product::all()->where('tipo', 3);
+      return view('lentes')->with('products', $products);
     }
     public function pdbelleza(){
-      return view('pdbelleza');
+      $products = \pinkfeelin\Models\Product\Product::all()->where('tipo', 4);
+      return view('pdbelleza')->with('products',$products);
     }
-    public function articulo(){
-      return view('articulo');
-    }
-
     public function realizarcompra(){
       return view('realizarcompra');
     }
