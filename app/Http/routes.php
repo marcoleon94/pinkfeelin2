@@ -20,6 +20,7 @@ Route::get('/vestidos', 'Usuarios\ControladorUsuarios@vestidos');
 Route::get('/bolsas', 'Usuarios\ControladorUsuarios@bolsas');
 Route::get('/pdbelleza', 'Usuarios\ControladorUsuarios@pdbelleza');
 Route::get('/articulo','Usuarios\ControladorUsuarios@articulo');
+Route::get('/realizarcompra', 'Usuarios\ControladorUsuarios@realizarcompra');
 
 Route::auth();
 

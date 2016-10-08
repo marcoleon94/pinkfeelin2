@@ -37,4 +37,8 @@ class ControladorUsuarios extends Controller
     public function articulo(){
       return view('articulo');
     }
+
+    public function realizarcompra(){
+      return view('realizarcompra');
+    }
 }

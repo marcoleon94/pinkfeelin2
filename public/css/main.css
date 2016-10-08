@@ -114,3 +114,17 @@ p{
   font-size: 14pt;
   color: #757575;
 }
+
+a.noselec{
+  font-size: 12px;
+  width:235px;
+  background-color:white;
+  color:#f48fb1;
+}
+
+a.selec{
+  font-size: 12px;
+  width:235px;
+  background-color:#f48fb1;
+  color: white;
+}
