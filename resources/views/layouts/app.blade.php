@@ -176,6 +176,52 @@
               firstDay: true
             });
 
+            $('#bot1').click(function(){
+              $('#sec2').click();
+            })
+
+            $('#bot2').click(function(){
+              $('#sec3').click();
+            })
+
+            $('#credito').click(function(){
+              $('#credito').addClass('selec');
+              $('#credito').removeClass('noselec');
+              $('#paypal').addClass('noselec');
+              $('#paypal').removeClass('selec');
+              $('#oxxo').addClass('noselec');
+              $('#oxxo').removeClass('selec');
+              $('#dcred').show();
+              $('#dpay').hide();
+              $('#dox').hide();
+            })
+
+            $('#paypal').click(function(){
+              $('#paypal').addClass('selec');
+              $('#paypal').removeClass('noselec');
+              $('#credito').addClass('noselec');
+              $('#credito').removeClass('selec');
+              $('#oxxo').addClass('noselec');
+              $('#oxxo').removeClass('selec');
+              $('#dcred').hide();
+              $('#dpay').show();
+              $('#dox').hide();
+            })
+
+            $('#oxxo').click(function(){
+              $('#oxxo').addClass('selec');
+              $('#oxxo').removeClass('noselec');
+              $('#paypal').addClass('noselec');
+              $('#paypal').removeClass('selec');
+              $('#credito').addClass('noselec');
+              $('#credito').removeClass('selec');
+              $('#dcred').hide();
+              $('#dpay').hide();
+              $('#dox').show();
+            })
+
+
+
         });
 
     </script>

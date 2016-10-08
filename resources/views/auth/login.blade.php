@@ -51,24 +51,21 @@
                             </div>
                         </div>
 
-                      <!--  <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember"> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                      -->
+
+
 
                         <div class="form-group">
-                            <div>
-                              <button class="btn waves-effect waves-red right" type="submit" name="action" style="margin-top:30px;">Iniciar Sesion
-                                <i class="material-icons right">input</i>
-                              </button>
+                            <div class="row">
 
-                                <!-- <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a> -->
+                              <div class="col s12">
+                                <button class="btn waves-effect waves-red right" type="submit" name="action" style="margin-top: 30px;">Iniciar Sesion
+                                  <i class="material-icons right">input</i>
+                                </button>
+                              </div>
+                            <!--  <div class="col s6">
+                                <a class=""  href="{{ url('/password/reset') }}">Olvide mi Contraseña</a>
+                              </div> -->
+
                             </div>
                         </div>
                         </div>
