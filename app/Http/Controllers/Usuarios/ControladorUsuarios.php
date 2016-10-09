@@ -34,6 +34,10 @@ class ControladorUsuarios extends Controller
       $products = \pinkfeelin\Models\Product\Product::all()->where('tipo', 3);
       return view('lentes')->with('products', $products);
     }
+    public function articulo($id){
+      $product =\pinkfeelin\Models\Product\Product::select('*')->where('id', $id)->first();
+      return view('articulo')->with('product', $product);
+    }
     public function pdbelleza(){
       $products = \pinkfeelin\Models\Product\Product::all()->where('tipo', 4);
       return view('pdbelleza')->with('products',$products);

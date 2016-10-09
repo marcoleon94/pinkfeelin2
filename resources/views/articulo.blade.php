@@ -40,7 +40,7 @@
                           </div>
                     </div>
                     <div class="card-action">
-                      <a href="#">Añadir a tu carrito</a>
+                      <a href="/carrito/{{$product->id}}">Añadir a tu carrito</a>
                     </div>
                   </div>
                 </div>
