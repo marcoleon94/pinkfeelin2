@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use pinkfeelin\Http\Requests;
 use pinkfeelin\Http\Controllers\Controller;
+use Cart;
 
 class ControladorCarrito extends Controller
 {
@@ -21,10 +22,20 @@ class ControladorCarrito extends Controller
         return view("carrito")->with('products', $products);
     }
 
-    public function carrito(){
-      if (Request::isMethod('post')){
-        dd($this);
+    public function carrito(Request $request){
+      if ($request->isMethod('post')){
+        $prodid=$request->input('prodid');
+        $cant=$request->input('cant');
+        $imag=$request->input('imag');
+        $marc=$request->input('marc');
+
+        $product=\pinkfeelin\Models\Product\Product::find($prodid);
+        Cart::add(array(['id'=>$product->id, 'name'=>$product->nombre, 'qty'=>$cant, 'price'=>$product->precio, 'options' =>['image'=>$imag, 'mark'=>$marc]]));
       }
+      $cart=Cart::content();
+
+      // dd($cart);
+      return view("carrito")->with('cart',$cart);
     }
 
     /**
@@ -35,6 +46,7 @@ class ControladorCarrito extends Controller
     public function create()
     {
         //
+
     }
 
     /**
@@ -91,5 +103,9 @@ class ControladorCarrito extends Controller
     public function destroy($id)
     {
         //
+
+
+
+
     }
 }

@@ -17,39 +17,48 @@
                   <div class="card-content">
                       <form class="form-horizontal" role="form" method="POST" action="{{ url('carrito') }}">
                           {{ csrf_field() }}
-                          @foreach ($products as $product)
+                          @foreach ($cart as $item)
                             <div class="row">
                               <div class="col s12 carro">
                                 <div class="row">
                                   <div class="col s4">
-                                    <img class="carro" src="{{$product->imagen}}" alt="Producto" />
+                                    <img class="carro" src="{{$item->options->image}}" alt="Producto" />
                                   </div>
                                   <div class="col s8">
                                       <p>
-                                        Producto: {{$product->nombre}}<br>
+                                        Producto: {{$item->name}}<br>
                                       </p>
 
                                       <p>
-                                        Precio: ${{$product->precio}}<br>
+                                        Precio: ${{$item->price}}<br>
                                       </p>
 
                                       <p>
-                                        Marca: {{$product->marca}}<br>
+                                        Marca: {{$item->options->mark}}<br>
                                       </p>
 
                                       <p>
-                                        Cantidad: {{$product->stock}}<br>
+                                        Cantidad: {{$item->qty}}<br>
                                       </p>
 
                                       <p>
-                                        Total: <br>
+                                        Subtotal: ${{$item->subtotal}}<br>
                                       </p>
                                   </div>
+
+                                  <a class="btn waves-effect waves-light right" style="margin-top:30px; margin-right: 30px;" href="">Quitar
+                                    <i class="material-icons right">mode_edit</i>
+                                  </a>
                                 </div>
 
                               </div>
                             </div>
                           @endforeach
+                          <p>
+                            Impuestos: ${{Cart::tax()}}<br>
+                            Total: ${{Cart::total()}}
+
+                          </p>
                       </form>
                   </div>
               </div>
