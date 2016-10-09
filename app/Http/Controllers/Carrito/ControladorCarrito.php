@@ -17,12 +17,13 @@ class ControladorCarrito extends Controller
     public function index()
     {
         //
-        return view("carrito");
+        $products= \pinkfeelin\Models\Product\Product::all()->where('tipo', 2);
+        return view("carrito")->with('products', $products);
     }
 
     public function carrito(){
-      if (Request::isMetod('post')){
-        dd("hola");
+      if (Request::isMethod('post')){
+        dd($this);
       }
     }
 

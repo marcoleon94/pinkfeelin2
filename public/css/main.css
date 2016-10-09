@@ -148,3 +148,11 @@ div.carro:hover{
   box-shadow: 5px 5px 2px grey;
 
 }
+
+img.carro{
+  background-color: gray;
+  margin-top: 8px;
+  float: left;
+  width: 180px;
+  height: 180px;
+}

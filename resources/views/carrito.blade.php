@@ -15,16 +15,41 @@
                     </div>
                   </div>
                   <div class="card-content">
-                      <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                      <form class="form-horizontal" role="form" method="POST" action="{{ url('carrito') }}">
                           {{ csrf_field() }}
+                          @foreach ($products as $product)
+                            <div class="row">
+                              <div class="col s12 carro">
+                                <div class="row">
+                                  <div class="col s4">
+                                    <img class="carro" src="{{$product->imagen}}" alt="Producto" />
+                                  </div>
+                                  <div class="col s8">
+                                      <p>
+                                        Producto: {{$product->nombre}}<br>
+                                      </p>
 
-                          <div class="row">
-                            <div class="col s12 carro">
-                              
+                                      <p>
+                                        Precio: ${{$product->precio}}<br>
+                                      </p>
+
+                                      <p>
+                                        Marca: {{$product->marca}}<br>
+                                      </p>
+
+                                      <p>
+                                        Cantidad: {{$product->stock}}<br>
+                                      </p>
+
+                                      <p>
+                                        Total: <br>
+                                      </p>
+                                  </div>
+                                </div>
+
+                              </div>
                             </div>
-
-                          </div>
-
+                          @endforeach
                       </form>
                   </div>
               </div>
