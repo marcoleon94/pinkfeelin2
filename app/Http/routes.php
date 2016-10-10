@@ -24,6 +24,7 @@ where('id', '[0-9]+');
 Route::get('/realizarcompra', 'Usuarios\ControladorUsuarios@realizarcompra');
 Route::get('/carrito', 'Carrito\ControladorCarrito@index');
 Route::post('/carrito', 'Carrito\ControladorCarrito@carrito');
+// Route::get('/carrito/{id}', 'Carrito\ControladorCarrito@destroy');
 
 Route::auth();
 Route::get('/addToCart/{id}','Carrito\ControladorCarrito@addToCart');
