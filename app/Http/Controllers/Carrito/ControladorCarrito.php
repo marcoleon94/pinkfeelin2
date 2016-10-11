@@ -103,9 +103,14 @@ class ControladorCarrito extends Controller
     public function destroy($id)
     {
         //
-
-
-
+        $itemsCart = Cart::search(function($item, $key) use ($id){
+          return $item->id == $id;
+        });
+        // dd($itemsCart->first()->rowId;
+        Cart::remove($itemsCart->first()->rowId);
+        $cart=Cart::content();
+        // dd($cart);
+        return view("carrito")->with('cart',$cart);
 
     }
 }

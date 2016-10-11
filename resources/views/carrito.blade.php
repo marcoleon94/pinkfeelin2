@@ -46,7 +46,7 @@
                                       </p>
                                   </div>
 
-                                  <a class="btn waves-effect waves-light right" style="margin-top:30px; margin-right: 30px;" href="">Quitar
+                                  <a class="btn waves-effect waves-light right" style="margin-top:30px; margin-right: 30px;" href="{{url('/carrito', $item->id)}}">Quitar
                                     <i class="material-icons right">mode_edit</i>
                                   </a>
                                 </div>
