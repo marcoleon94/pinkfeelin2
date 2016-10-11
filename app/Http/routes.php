@@ -19,10 +19,7 @@ Route::get('/lentes', 'Usuarios\ControladorUsuarios@lentes');
 Route::get('/vestidos', 'Usuarios\ControladorUsuarios@vestidos');
 Route::get('/bolsas', 'Usuarios\ControladorUsuarios@bolsas');
 Route::get('/pdbelleza', 'Usuarios\ControladorUsuarios@pdbelleza');
-Route::get('/articulo/{id}',function($id){
-  $product =\pinkfeelin\Models\Product\Product::select('*')->where('id', $id)->first();
-  return view('articulo')->with('product', $product);
-})->
+Route::get('/articulo/{id}','Usuarios\ControladorUsuarios@articulo')->
 where('id', '[0-9]+');
 Route::get('/realizarcompra', 'Usuarios\ControladorUsuarios@realizarcompra');
 Route::get('/carrito', 'Carrito\ControladorCarrito@index');
@@ -30,5 +27,6 @@ Route::post('/carrito', 'Carrito\ControladorCarrito@carrito');
 Route::get('/carrito/{id}', 'Carrito\ControladorCarrito@destroy');
 
 Route::auth();
+Route::get('/addToCart/{id}','Carrito\ControladorCarrito@addToCart');
 
 Route::get('/home', 'HomeController@index');
