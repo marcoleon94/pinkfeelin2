@@ -60,13 +60,14 @@
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
+                        <li><a href="{{url('carrito')}}"><i class="material-icons right">shopping_cart</i></a></li>
                     @else
                         <li>
                             <a href="#!" class="dropdown-button" data-activates="UserMenu">
                                 {{ Auth::user()->name }} <i class="material-icons right">arrow_drop_down</i>
                             </a>
                         </li>
-                                                    <li><a data-target="modal2" class="modal-trigger"><i class="material-icons right">shopping_cart</i></a></li>
+                        <li><a href="{{url('carrito')}}"><i class="material-icons right">shopping_cart</i></a></li>
                     @endif
                 </ul>
               </div>

@@ -18,8 +18,8 @@ class ControladorCarrito extends Controller
     public function index()
     {
         //
-        $products= \pinkfeelin\Models\Product\Product::all()->where('tipo', 2);
-        return view("carrito")->with('products', $products);
+        $cart=Cart::content();
+        return view("carrito")->with('cart',$cart);
     }
 
     public function carrito(Request $request){
