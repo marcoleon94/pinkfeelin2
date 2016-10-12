@@ -37,16 +37,20 @@
                                         Marca: {{$item->options->mark}}<br>
                                       </p>
 
-                                      <p>
-                                        Cantidad: {{$item->qty}}<br>
-                                      </p>
+                                      <div class="row">
 
+                                        <a class="col s1 btn" href="{{url("carrito/$item->id/add")}}">+</a>
+                                        <input class="col s1 " type="text" name="quantity" value="{{$item->qty}}" autocomplete="off" size="2" readonly>
+                                        <a class="col s1 btn" href="{{url("carrito/$item->id/sub")}}">-</a>
+                                        <br>
+                                        <br>
+                                        <br>
+                                      </div>
                                       <p>
                                         Subtotal: ${{$item->subtotal}}<br>
                                       </p>
-                                  </div>
-
-                                  <a class="btn waves-effect waves-light right" style="margin-top:30px; margin-right: 30px;" href="{{url('/carrito', $item->id)}}">Quitar
+                                      </div>
+                                  <a class="btn waves-effect waves-light right" style="margin-top:5px; margin-right: 5px;" href="{{url('/carrito', $item->id)}}">Quitar
                                     <i class="material-icons right">mode_edit</i>
                                   </a>
                                 </div>

@@ -33,7 +33,7 @@
                               <option value="9">9</option>
                               <option value="10">10</option>
                             </select>
-                            <label>Cantidad</label> 
+                            <label>Cantidad</label>
                             </div>
                             <div class="col s2 push-s4 ">
                             <p>Disponibles: {{$product->stock}}</p>
@@ -45,7 +45,7 @@
                       <input type="hidden" name="imag" value="{{$product->imagen}}">
                       <input type="hidden" name="marc" value="{{$product->marca}}">
                       <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
-                      <button href="#" type="submit">Añadir a tu carrito</button>
+                      <button class="btn" href="#" type="submit">Añadir a tu carrito</button>
                     </div>
                   </div>
                 </div>

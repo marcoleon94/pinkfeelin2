@@ -34,9 +34,27 @@ class ControladorCarrito extends Controller
       }
       $cart=Cart::content();
 
-      // dd($cart);
+      //dd($cart);
       return view("carrito")->with('cart',$cart);
     }
+    public function increase($product_id,$increment){
+      //increment the quantity
+      $product=\pinkfeelin\Models\Product\Product::find($product_id);
+     $rowId = Cart::search(function($item, $key) use ($product_id){
+       return $item->id == $product_id;
+       });
+     //$item = Cart::get($rowId[0]);
+     if($increment =="add"){
+     Cart::update($rowId->first()->rowId, $rowId->first()->qty + 1);
+    }else{
+     Cart::update($rowId->first()->rowId, $rowId->first()->qty - 1);
+    }
+     $cart=Cart::content();
+     //dd($cart);
+     return view("carrito")->with('cart',$cart);
+
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -113,4 +131,5 @@ class ControladorCarrito extends Controller
         return view("carrito")->with('cart',$cart);
 
     }
+
 }
