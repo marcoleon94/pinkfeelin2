@@ -50,7 +50,7 @@
                                         Subtotal: ${{$item->subtotal}}<br>
                                       </p>
                                       </div>
-                                  <a class="btn waves-effect waves-light right" style="margin-top:5px; margin-right: 5px;" href="{{url('/carrito', $item->id)}}">Quitar
+                                  <a class="btn waves-effect waves-light right" style="margin-top:5px; margin-right: 5px;" href="{{url('/carrito', $item->id)}}" id="quitar">Quitar
                                     <i class="material-icons right">mode_edit</i>
                                   </a>
                                 </div>

@@ -6,7 +6,7 @@
             <div class="divider"></div>
              <!-- Primera Sección-->
              <div class="row">
-               <form class="" action="{{url("carrito")}}" method="post">
+               <form class="" action="{{url("/carrito")}}" method="post">
                 <div class="col s5" style="margin: 10px;">
                     <img class="responsive-img materialboxed" src="{{$product->imagen}}" name="imag" />
                 </div>
@@ -45,7 +45,7 @@
                       <input type="hidden" name="imag" value="{{$product->imagen}}">
                       <input type="hidden" name="marc" value="{{$product->marca}}">
                       <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
-                      <button class="btn" href="#" type="submit">Añadir a tu carrito</button>
+                      <button class="btn" href="#" type="submit" id="agregar">Añadir a tu carrito</button>
                     </div>
                   </div>
                 </div>

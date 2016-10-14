@@ -60,14 +60,14 @@
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
-                        <li><a href="{{url('carrito')}}"><i class="material-icons right">shopping_cart</i></a></li>
+                        <li><a href="{{url('/carrito')}}"><i class="material-icons right" style="font-size:50px;">shopping_cart</i><span class="carro" id="spcar"></span></a></li>
                     @else
                         <li>
                             <a href="#!" class="dropdown-button" data-activates="UserMenu">
                                 {{ Auth::user()->name }} <i class="material-icons right">arrow_drop_down</i>
                             </a>
                         </li>
-                        <li><a href="{{url('carrito')}}"><i class="material-icons right">shopping_cart</i></a></li>
+                        <li><a href="{{url('/carrito')}}"><i class="material-icons right" style="font-size:50px;">shopping_cart</i><span class="carro" >0</span></a></li>
                     @endif
                 </ul>
               </div>
@@ -152,7 +152,22 @@
     <script src="/js/materialize.min.js"></script>
     <script src="/js/ui.datepicker-es.js"></script>
     <script>
+
+        var spancarro = function(){
+          $.ajax({
+            type:'get',
+            url: "/icono",
+            success: function(data){
+              $('#spcar').html(data);
+            },
+            error: function(){
+              alert("Error");
+            }
+          });
+        }
+
         $( document ).ready(function(){
+            spancarro();
             $(".dropdown-button").dropdown();
             $(".button-collapse").sideNav();
             $('.modal-trigger').leanModal();
@@ -220,7 +235,16 @@
               $('#dpay').hide();
               $('#dox').show();
             })
+
+            $('#agregar').click(function(){
+              spancarro();
+            })
+
+            $('#quitar').click(function(){
+              spancarro();
+            })
         });
+
 
     </script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}

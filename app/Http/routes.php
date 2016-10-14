@@ -27,6 +27,7 @@ Route::post('/carrito', 'Carrito\ControladorCarrito@carrito');
 Route::get('/carrito/{id}', 'Carrito\ControladorCarrito@destroy');
 Route::get('/carrito/{product_id}/{increase}', 'Carrito\ControladorCarrito@increase')->where('increase','add');
 Route::get('/carrito/{product_id}/{decrease}', 'Carrito\ControladorCarrito@increase')->where('decrease','sub');
+Route::get('/icono', 'Icono\ControladorIcono@icono');
 
 
 Route::auth();
