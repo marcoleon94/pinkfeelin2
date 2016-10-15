@@ -7,25 +7,24 @@
             <div class="divider"></div>
              <!-- Primera Sección-->
              <div class="row" style="margin:4%;">
-                 <?php for($x=1;$x<=3;$x++){ ?>
-                 <div class="col s4 m4">
-                    <div class="card">
-                        <div class="card-image">
-                          <a href="articulo.php"><img class="responsirve-img" src="images/bolsa.jpg"></a>
-                          <span class="card-title"><?php echo "Bolsa $x"; ?></span>
-                        </div>
-                        <div class="card-content pink lighten-2">
-                          <p>Bolsa café.
-                              Con monedero.</p>
-                                <p style="text-decoration:line-through;">$450 MNX.</p>
-                               <p>$300</p>
-                        </div>
-                        <div class="card-action pink darken-4">
-                          <a href="#">Añadir a tu carrito<span class="new badge" data-badge-caption="Oferta"></span></a>
-                        </div>
+               @foreach ($products as $product)
+               <div class="col s4 m4">
+                  <div class="card">
+                      <div class="card-image">
+                        <a href="/articulo/{{$product->id}}"><img class="responsirve-img" src="{{$product->imagen}}"></a>
+                        <span class="card-title amber-text text-darken-1">{{$product->nombre}}</span>
                       </div>
-                 </div>
-                 <?php } ?>
+                      <div class="card-content pink lighten-2">
+                        <p>{{$product->descripcion}} {{$product->marca}}</p>
+                              <p style="text-decoration:line-through;">${{$product->precio}} MNX.</p>
+                              <p>${{$product->precio-($product->precio*$product->descuento)}} MNX.</p>
+                      </div>
+                      <div class="card-action pink darken-4">
+                        <a href="#">Añadir a tu carrito</a>
+                      </div>
+                    </div>
+               </div>
+               @endforeach
              </div>
          </div>
      </div>

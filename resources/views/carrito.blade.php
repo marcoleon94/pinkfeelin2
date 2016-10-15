@@ -50,7 +50,7 @@
                                         Subtotal: ${{$item->subtotal}}<br>
                                       </p>
                                       </div>
-                                  <a class="btn waves-effect waves-light right" style="margin-top:5px; margin-right: 5px;" href="{{url('/carrito', $item->id)}}" id="quitar">Quitar
+                                  <a class="btn waves-effect waves-light right" style="margin-top:-10px; margin-right: -5px;" href="{{url('/carrito', $item->id)}}" id="quitar">Quitar
                                     <i class="material-icons right">mode_edit</i>
                                   </a>
                                 </div>
@@ -58,11 +58,16 @@
                               </div>
                             </div>
                           @endforeach
-                          <p>
-                            Impuestos: ${{Cart::tax()}}<br>
-                            Total: ${{Cart::total()}}
+                          <div class="row right">
+                            <p>
+                            Impuestos: ${{Cart::tax()}}</p>
+                            <h5>Total: ${{Cart::total()}}</h5>
 
-                          </p>
+                          </div>
+                          <br><br><br>
+                          <a class="btn waves-effect waves-light right" style="margin-top:5px;" href="{{url('/realizarcompra')}}" id="compra">Realzar Compra
+                            <i class="material-icons right">send</i>
+                          </a>
                       </form>
                   </div>
               </div>

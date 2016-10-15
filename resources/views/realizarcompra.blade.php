@@ -16,7 +16,7 @@
                     </div>
                   </div>
                   <div class="card-content">
-                      <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                      <form class="form-horizontal" role="form" method="POST" action="{{ url('/realizarcompra.store') }}">
                           {{ csrf_field() }}
                         <ul class="collapsible popout" data-collapsible="accordion">
                           <li>
@@ -27,7 +27,7 @@
                                     <div class="input-field col s6">
                                         <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
                                         <i class="material-icons prefix">account_circle</i>
-                                        <input type="text" id="estado" class="validate" >
+                                        <input type="text" id="estado" class="validate" name="estado" >
                                         <label for="estado" class="left-align">Estado</label>
                                         @if ($errors->has('estado'))
                                             <span class="help-block">
@@ -41,7 +41,7 @@
                                     <div class="input-field col s6">
                                         <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
                                         <i class="material-icons prefix">account_circle</i>
-                                        <input type="text" id="ciudad" class="validate" >
+                                        <input type="text" id="ciudad" class="validate" name="ciudad" >
                                         <label for="ciudad" class="left-align">Ciudad</label>
                                         @if ($errors->has('ciudad'))
                                             <span class="help-block">
@@ -55,7 +55,7 @@
                                     <div class="input-field col s6">
                                         <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
                                         <i class="material-icons prefix">account_circle</i>
-                                        <input type="text" id="colonia" class="validate" >
+                                        <input type="text" id="colonia" class="validate" name="colonia" >
                                         <label for="colonia" class="left-align">Colonia</label>
                                         @if ($errors->has('colonia'))
                                             <span class="help-block">
@@ -69,7 +69,7 @@
                                     <div class="input-field col s8">
                                         <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
                                         <i class="material-icons prefix">account_circle</i>
-                                        <input type="text" id="calle" class="validate" >
+                                        <input type="text" id="calle" class="validate" name="calle">
                                         <label for="calle" class="left-align">Calle</label>
                                         @if ($errors->has('calle'))
                                             <span class="help-block">
@@ -83,8 +83,8 @@
                                     <div class="input-field col s4">
                                         <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
                                         <i class="material-icons prefix">account_circle</i>
-                                        <input type="text" id="numero" class="validate" >
-                                        <label for="numero" class="left-align">Numero</label>
+                                        <input type="text" id="numero" class="validate" name="numero" >
+                                        <label for="numero" class="left-align">Numero Exterior</label>
                                         @if ($errors->has('numero'))
                                             <span class="help-block">
                                                 <strong>{{ $errors->first('numero') }}</strong>
@@ -97,7 +97,7 @@
                                     <div class="input-field col s4">
                                         <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
                                         <i class="material-icons prefix">account_circle</i>
-                                        <input type="text" id="cp" class="validate" >
+                                        <input type="text" id="cp" class="validate"  name="cp">
                                         <label for="cp" class="left-align">C.P.</label>
                                         @if ($errors->has('cp'))
                                             <span class="help-block">
@@ -106,7 +106,9 @@
                                         @endif
                                     </div>
                                 </div>
-
+                                @if (Auth::check())
+                                  <input type="hidden" name="id_usuario" value="{{Auth::user()->id}}">
+                                @endif
                                 <a class="btn waves-effect waves-light right" id="bot1" style="margin-top:30px; margin-right: 30px;">Siguiente
                                   <i class="material-icons right">send</i>
                                 </a>
@@ -145,7 +147,7 @@
                                          <div class="input-field col s12">
                                              <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
                                              <i class="material-icons prefix">account_circle</i>
-                                             <input type="text" id="nombre" class="validate" >
+                                             <input type="text" id="nombre" class="validate" name="nombre">
                                              <label for="nombre" class="left-align">Nombre del Propietario</label>
                                              @if ($errors->has('nombre'))
                                                  <span class="help-block">
@@ -159,7 +161,7 @@
                                          <div class="input-field col s8">
                                              <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
                                              <i class="material-icons prefix">account_circle</i>
-                                             <input type="text" id="numero" class="validate" >
+                                             <input type="text" id="numero" class="validate" name='numero_tarjeta'>
                                              <label for="numero" class="left-align">Numero de Tarjeta</label>
                                              @if ($errors->has('numero'))
                                                  <span class="help-block">
@@ -173,7 +175,7 @@
                                          <div class="input-field col s4">
                                              <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
                                              <i class="material-icons prefix">account_circle</i>
-                                             <input type="text" id="codigo" class="validate" >
+                                             <input type="text" id="codigo" class="validate" name="codigo">
                                              <label for="codigo" class="left-align">Codigo</label>
                                              @if ($errors->has('codigo'))
                                                  <span class="help-block">
@@ -187,7 +189,7 @@
                                          <div class="input-field col s4">
                                              <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
                                              <i class="material-icons prefix">account_circle</i>
-                                             <input type="text" id="mes_exp" class="validate" >
+                                             <input type="text" id="mes_exp" class="validate" name="mes_exp">
                                              <label for="mes_exp" class="left-align">Mes de Expiracion</label>
                                              @if ($errors->has('mes_exp'))
                                                  <span class="help-block">
@@ -201,7 +203,7 @@
                                          <div class="input-field col s4">
                                              <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
                                              <i class="material-icons prefix">account_circle</i>
-                                             <input type="text" id="año_exp" class="validate" >
+                                             <input type="text" id="año_exp" class="validate"  name="año_exp">
                                              <label for="año_exp" class="left-align">Año de Expiracion</label>
                                              @if ($errors->has('año_exp'))
                                                  <span class="help-block">
@@ -212,7 +214,7 @@
                                      </div>
 
                                      <div class="input-field col s4" >
-                                        <select class="icons">
+                                        <select class="icons" name="tipo">
                                           <option value="0" >Choose your option</option>
                                           <option value="1" data-icon="images/visa.png" class="left circle">Visa</option>
                                           <option value="2" data-icon="images/master.png" class="left circle">Mastercard</option>
@@ -306,7 +308,10 @@
                                         @endif
                                     </div>
                                 </div>
-
+                                <div class="row right">
+                                  <p>Total: ${{Cart::total()}}</p>
+                                  <input type="hidden" name="importe" value="{{Cart::total()}}">
+                                </div>
                                 <a class="btn waves-effect waves-light right" type="submit" name="action" style="margin-top:30px; margin-right: 30px;">Comprar
                                   <i class="material-icons right">mode_edit</i>
                                 </a>
