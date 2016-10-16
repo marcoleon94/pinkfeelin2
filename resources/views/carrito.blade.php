@@ -46,13 +46,17 @@
                                         <br>
                                         <br>
                                       </div>
+
                                       <p>
                                         Subtotal: ${{$item->subtotal}}<br>
                                       </p>
+
+                                      <a class="col s4 btn waves-effect waves-light right" style="position: relative; bottom:20px; right:5px;" href="{{url('/carrito', $item->id)}}" id="quitar">Quitar
+                                        <i class="material-icons right">not_interested</i>
+                                      </a>
+
                                       </div>
-                                  <a class="btn waves-effect waves-light right" style="margin-top:5px; margin-right: 5px;" href="{{url('/carrito', $item->id)}}" id="quitar">Quitar
-                                    <i class="material-icons right">mode_edit</i>
-                                  </a>
+
                                 </div>
 
                               </div>

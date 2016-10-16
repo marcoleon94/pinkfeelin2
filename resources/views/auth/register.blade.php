@@ -25,9 +25,11 @@
                                 <input type="text" id="name" class="validate" name="name" value="{{old('name')}}">
                                 <label for="name" class="left-align">Nombre</label>
                                 @if ($errors->has('name'))
+                                  <div class="left-align">
                                     <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
+                                  </div>
                                 @endif
                             </div>
                         </div>
@@ -39,9 +41,11 @@
                                 <input type="text" id="lastname" class="validate" name="lastname" value="{{old('lastname')}}" >
                                 <label for="lastname" class="left-align">Apellido</label>
                                 @if ($errors->has('lastname'))
+                                  <div class="left-align">
                                     <span class="help-block">
                                         <strong>{{ $errors->first('lastname') }}</strong>
                                     </span>
+                                  </div>
                                 @endif
                             </div>
                         </div>
@@ -53,9 +57,11 @@
                                 <input type="text" id="telefono" class="validate" name="telefono" value="{{old('telefono')}}">
                                 <label for="telefono" class="left-align">Telefono</label>
                                 @if ($errors->has('telefono'))
+                                  <div class="left-align">
                                     <span class="help-block">
                                         <strong>{{ $errors->first('telefono') }}</strong>
                                     </span>
+                                  </div>
                                 @endif
                             </div>
                         </div>
@@ -91,9 +97,11 @@
                                 <label for="email" class="left-align">E-mail</label>
 
                                 @if ($errors->has('email'))
+                                  <div class="left-align">
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
+                                  </div>
                                 @endif
                             </div>
                         </div>
@@ -108,9 +116,11 @@
                   	        		<label for="password" class="left-align" >Contraseña</label>
 
                                 @if ($errors->has('password'))
+                                  <div class="left-align">
                                     <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
+                                  </div>
                                 @endif
                             </div>
                         </div>
@@ -124,9 +134,11 @@
                                 <input type="password" id="password_confirm" class="validate" name="password_confirmation">
                                 <label for="password_confirmation" class="left-align" >Repetir Contraseña</label>
                                 @if ($errors->has('password_confirmation'))
+                                  <div class="left-align">
                                     <span class="help-block">
                                         <strong>{{ $errors->first('password_confirmation') }}</strong>
                                     </span>
+                                  </div>
                                 @endif
                             </div>
                         </div>

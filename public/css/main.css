@@ -149,6 +149,14 @@ div.carro:hover{
 
 }
 
+img.articulo{
+  background-color: gray;
+  margin-top: 8px;
+  float: left;
+  width: 300px;
+  height: 300px;
+}
+
 img.carro{
   background-color: gray;
   margin-top: 8px;
@@ -164,4 +172,15 @@ span.carro{
   color:#f48fb1;
   font-size: 12pt;
   background-color: none;
+}
+
+span.help-block{
+  position: relative;
+  bottom: 10px;
+  border: solid 3px #e53935;
+  background-color: #ef9a9a;
+  border-radius: 8px;
+  padding: 3px;
+  color: white;
+  font-size: 12pt;
 }

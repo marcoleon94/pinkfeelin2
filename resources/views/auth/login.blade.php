@@ -1,4 +1,4 @@
-@extends('layouts.app')
+  @extends('layouts.app')
 
 @section('content')
 <div class="page-login">
@@ -28,9 +28,11 @@
             	        					<input type="text" id="email" class="validate" name="email" >
             	        					<label for="email" class="left-align"> E-mail</label>
                                 @if ($errors->has('email'))
+                                  <div class="left-align">
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
+                                  </div>
                                 @endif
                             </div>
                         </div>
@@ -44,9 +46,11 @@
             	        					<input type="password" id="password" class="validate" name="password">
             	        					<label for="password" class="left-align">Contraseña</label>
                                 @if ($errors->has('password'))
+                                  <div class="left-align">
                                     <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
+                                  </div>
                                 @endif
                             </div>
                         </div>
@@ -63,12 +67,12 @@
 
                         <div class="form-group">
                             <div>
-                              <button class="btn waves-effect waves-red right" type="submit" name="action" style="margin-top:30px;">Iniciar Sesion
+                              <button class="btn waves-effect waves-red right" type="submit" name="action" style="margin-top:30px;">Login
                                 <i class="material-icons right">input</i>
                               </button>
                             </div>
                             <div class="col left">
-                            <a href="{{ url('/password/reset') }}" style="color:pink">Olvidaste tu contraseña?</a>
+                            <a href="{{ url('/password/reset') }}" style="color:pink; position: relative; top: 70px; right:30px;">Olvidaste tu contraseña?</a>
                           </div>
                         </div>
                         </div>

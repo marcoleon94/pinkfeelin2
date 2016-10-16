@@ -27,6 +27,7 @@
                  </div>
                  <?php } ?>
              </div>
+            
          </div>
      </div>
     @endsection
