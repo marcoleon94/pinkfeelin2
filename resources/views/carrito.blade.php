@@ -65,7 +65,7 @@
 
                           </div>
                           <br><br><br>
-                          <a class="btn waves-effect waves-light right" style="margin-top:5px;" href="{{url('/realizarcompra')}}" id="compra">Realzar Compra
+                          <a class="btn waves-effect waves-light right" style="margin-top:5px;" href="{{route('realizarcompra.index')}}" id="compra">Realzar Compra
                             <i class="material-icons right">send</i>
                           </a>
                       </form>

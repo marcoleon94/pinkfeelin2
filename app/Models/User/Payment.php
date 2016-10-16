@@ -9,6 +9,7 @@ class Payment extends Model
     //
     protected $table = 'payments';
     protected $primarykey= 'id';
+    public $timestamps=false;
     protected $fillable= [
       'id_usuario','nombre','numero','mes_exp','año_exp','codigo','tipo'
     ];

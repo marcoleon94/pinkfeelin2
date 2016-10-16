@@ -58,7 +58,7 @@ class ControladorUsuarios extends Controller
      */
     public function store(array $data)
     {
-         app\Listeners\Models\User\Address::create([
+         app\Models\User\Address::create([
             'id_ususario' => $data['id_usuario'],
             'estado' => $data['estado'],
             'ciudad' => $data['ciudad'],
@@ -67,7 +67,7 @@ class ControladorUsuarios extends Controller
             'numer' => $data['numero'],
             'cp' => $data['cp'],
         ]);
-         app\Listeners\Models\User\Payment::create([
+         app\Models\User\Payment::create([
           'id_usuario' =>$data['id_usuario'],
           'nombre' =>$data['nombre'],
           'numero' =>$data['numero_tarjeta'],

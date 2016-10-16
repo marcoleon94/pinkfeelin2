@@ -16,7 +16,7 @@
                     </div>
                   </div>
                   <div class="card-content">
-                      <form class="form-horizontal" role="form" method="POST" action="{{ url('/realizarcompra.store') }}">
+                      <form class="form-horizontal" role="form" method="POST" action="{{route('realizarcompra.store')}}">
                           {{ csrf_field() }}
                         <ul class="collapsible popout" data-collapsible="accordion">
                           <li>
@@ -107,7 +107,7 @@
                                     </div>
                                 </div>
                                 @if (Auth::check())
-                                  <input type="hidden" name="id_usuario" value="{{Auth::user()->id}}">
+                                  <input type="hidden" name="id_usuario" id="id_usuario" value="{{Auth::user()->id}}">
                                 @endif
                                 <a class="btn waves-effect waves-light right" id="bot1" style="margin-top:30px; margin-right: 30px;">Siguiente
                                   <i class="material-icons right">send</i>
@@ -310,11 +310,11 @@
                                 </div>
                                 <div class="row right">
                                   <p>Total: ${{Cart::total()}}</p>
-                                  <input type="hidden" name="importe" value="{{Cart::total()}}">
+                                  <input type="hidden" name="importe" id="importe" value="{{Cart::total()}}">
                                 </div>
-                                <a class="btn waves-effect waves-light right" type="submit" name="action" style="margin-top:30px; margin-right: 30px;">Comprar
+                                <button class="btn waves-effect waves-light right" type="submit" name="action" id="comprar" style="margin-top:30px; margin-right: 30px;">Comprar
                                   <i class="material-icons right">mode_edit</i>
-                                </a>
+                                </button>
 
                               </div>
                             </div>
