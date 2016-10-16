@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use pinkfeelin\Http\Requests;
 use pinkfeelin\Http\Controllers\Controller;
+use Cart;
 
 class ControladorUsuarios extends Controller
 {
@@ -17,7 +18,9 @@ class ControladorUsuarios extends Controller
       return view('contacto');
     }
     public function ofertas(){
-      return view('ofertas');
+      $products = \pinkfeelin\Models\Product\Product::select('products.id', 'products.nombre', 'products.precio', 'products.tipo', 'products.marca',
+      'products.descripcion', 'products.stock','products.imagen', 'offers.descuento as descuento')->join('offers','offers.id_producto','=','products.id')->get();
+      return view('ofertas')->with('products', $products);
     }
     public function atencion(){
       return view('atencion');
@@ -43,6 +46,41 @@ class ControladorUsuarios extends Controller
       return view('pdbelleza')->with('products',$products);
     }
     public function realizarcompra(){
-      return view('realizarcompra');
+      $cart=Cart::content();
+      return view('realizarcompra')->with('cart', $cart);
     }
+
+    /**
+     * Create a new user instance after a valid registration.
+     *
+     * @param  array  $data
+     * @return User
+     */
+    public function store(array $data)
+    {
+         app\Models\User\Address::create([
+            'id_ususario' => $data['id_usuario'],
+            'estado' => $data['estado'],
+            'ciudad' => $data['ciudad'],
+            'colonia' => $data['colonia'],
+            'calle' => $data['calle'],
+            'numer' => $data['numero'],
+            'cp' => $data['cp'],
+        ]);
+         app\Models\User\Payment::create([
+          'id_usuario' =>$data['id_usuario'],
+          'nombre' =>$data['nombre'],
+          'numero' =>$data['numero_tarjeta'],
+          'mes_exp' =>$data['mes_exp'],
+          'año_exp' =>$data['año_exp'],
+          'codigo' =>$data['codigo'],
+          'tipo' =>$data['tipo'],
+        ]);
+        $buy= new Buy;
+          $buy->id_usuario =$data['id_usuario'];
+          $buy->importe =$data['importe'];
+           $buy->save();
+
+    }
+
 }

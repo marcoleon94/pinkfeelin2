@@ -62,11 +62,16 @@
                               </div>
                             </div>
                           @endforeach
-                          <p>
-                            Impuestos: ${{Cart::tax()}}<br>
-                            Total: ${{Cart::total()}}
+                          <div class="row right">
+                            <p>
+                            Impuestos: ${{Cart::tax()}}</p>
+                            <h5>Total: ${{Cart::total()}}</h5>
 
-                          </p>
+                          </div>
+                          <br><br><br>
+                          <a class="btn waves-effect waves-light right" style="margin-top:5px;" href="{{route('realizarcompra.index')}}" id="compra">Realzar Compra
+                            <i class="material-icons right">send</i>
+                          </a>
                       </form>
                   </div>
               </div>

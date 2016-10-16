@@ -9,6 +9,7 @@ class Contain extends Model
     //
     protected $table = 'contains';
     protected $primarykey= 'id';
+    public $timestamps=false;
     protected $fillable= [
       'id_compra','id_producto','cantidad'
     ];

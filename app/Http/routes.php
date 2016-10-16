@@ -10,6 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+
 Route::get('/', 'Usuarios\ControladorUsuarios@index');
 Route::get('/index', 'Usuarios\ControladorUsuarios@index');
 Route::get('/atencion', 'Usuarios\ControladorUsuarios@atencion');
@@ -21,7 +22,7 @@ Route::get('/bolsas', 'Usuarios\ControladorUsuarios@bolsas');
 Route::get('/pdbelleza', 'Usuarios\ControladorUsuarios@pdbelleza');
 Route::get('/articulo/{id}','Usuarios\ControladorUsuarios@articulo')->
 where('id', '[0-9]+');
-Route::get('/realizarcompra', 'Usuarios\ControladorUsuarios@realizarcompra');
+Route::resource('realizarcompra', 'Compras\ControladorCompras');
 Route::get('/carrito', 'Carrito\ControladorCarrito@index');
 Route::post('/carrito', 'Carrito\ControladorCarrito@carrito');
 Route::get('/carrito/{id}', 'Carrito\ControladorCarrito@destroy');

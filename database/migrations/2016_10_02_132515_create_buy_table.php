@@ -15,7 +15,7 @@ class CreateBuyTable extends Migration
       Schema::create('buys', function (Blueprint $table) {
         $table->increments('id');
         $table->integer('id_usuario')->unsigned();
-        $table->decimal('importe',5,2);
+        $table->string('importe');
         $table->timestamps();
 
         $table->foreign('id_usuario')->references('id')->on('users');

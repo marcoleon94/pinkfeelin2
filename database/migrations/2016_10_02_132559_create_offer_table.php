@@ -15,7 +15,7 @@ class CreateOfferTable extends Migration
       Schema::create('offers', function (Blueprint $table) {
         $table->increments('id');
         $table->string('descripcion',50);
-        $table->decimal('descuento',5,2);
+        $table->decimal('descuento',10,2);
         $table->integer('id_producto')->unsigned();
 
         $table->foreign('id_producto')->references('id')->on('products');
