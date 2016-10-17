@@ -34,7 +34,7 @@
                 <li><a href="/pdbelleza">Productos de Belleza</a></li>
               </ul>
               <ul id="UserMenu" class="dropdown-content" >
-                  <li><a href="{{ url('/logout') }}"><i class="material-icons right">close</i>Logout</a></li>
+                  <li><a href="{{ url('/logout') }}"><i class="material-icons right">close</i>Cerrar Sesión</a></li>
               </ul>
   <!--<div class="navbar-fixed">-->
   <nav class="pink lighten-3">

@@ -4,6 +4,7 @@ namespace pinkfeelin\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
+use Cart;
 
 class RedirectIfAuthenticated
 {
@@ -20,7 +21,7 @@ class RedirectIfAuthenticated
         if (Auth::guard($guard)->check()) {
             return redirect('/');
         }
-
+        Cart::destroy();
         return $next($request);
     }
 }

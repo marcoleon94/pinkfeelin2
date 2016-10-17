@@ -82,7 +82,7 @@ class ControladorCompras extends Controller
           $product->stock=$product->stock-$item->qty;
           $product->save();
         }
-
+        Cart::destroy();
         return redirect('/index');
 
     }
