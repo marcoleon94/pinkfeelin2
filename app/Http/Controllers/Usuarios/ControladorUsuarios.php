@@ -50,37 +50,5 @@ class ControladorUsuarios extends Controller
       return view('realizarcompra')->with('cart', $cart);
     }
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return User
-     */
-    public function store(array $data)
-    {
-         app\Models\User\Address::create([
-            'id_ususario' => $data['id_usuario'],
-            'estado' => $data['estado'],
-            'ciudad' => $data['ciudad'],
-            'colonia' => $data['colonia'],
-            'calle' => $data['calle'],
-            'numer' => $data['numero'],
-            'cp' => $data['cp'],
-        ]);
-         app\Models\User\Payment::create([
-          'id_usuario' =>$data['id_usuario'],
-          'nombre' =>$data['nombre'],
-          'numero' =>$data['numero_tarjeta'],
-          'mes_exp' =>$data['mes_exp'],
-          'año_exp' =>$data['año_exp'],
-          'codigo' =>$data['codigo'],
-          'tipo' =>$data['tipo'],
-        ]);
-        $buy= new Buy;
-          $buy->id_usuario =$data['id_usuario'];
-          $buy->importe =$data['importe'];
-           $buy->save();
-
-    }
 
 }

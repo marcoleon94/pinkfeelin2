@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use pinkfeelin\Http\Requests;
 use pinkfeelin\Http\Controllers\Controller;
 use Cart;
+use Auth;
 
 class ControladorCompras extends Controller
 {
@@ -82,9 +83,16 @@ class ControladorCompras extends Controller
           $product->stock=$product->stock-$item->qty;
           $product->save();
         }
-
+        Cart::destroy();
         return redirect('/index');
 
+    }
+
+      public function historial()
+      {
+        $id_usuario= Auth::user()->id;
+        $compras = \pinkfeelin\Models\Buy\Buy::select('id', 'importe', 'created_at')->where('id_usuario', $id_usuario)->paginate('10');
+        return view('historial')->with('compras',$compras);
     }
 
     /**
@@ -93,9 +101,14 @@ class ControladorCompras extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function show($id)
     {
         //
+        $id_usuario=Auth::user()->id;
+        $contenido= \pinkfeelin\Models\Buy\Contain::select('contains.id', 'id_compra', 'id_producto', 'cantidad','buys.id_usuario as id_usuario', 'products.nombre as nombre')
+          ->join('buys','buys.id','=','contains.id_compra')->join('products','products.id','=','contains.id_producto')->where('buys.id_usuario', $id_usuario)->where('id_compra', $id)->get();
+        return view('detalle')->with('contenido', $contenido);
     }
 
     /**
