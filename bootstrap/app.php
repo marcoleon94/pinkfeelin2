@@ -41,6 +41,8 @@ $app->singleton(
     pinkfeelin\Exceptions\Handler::class
 );
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application

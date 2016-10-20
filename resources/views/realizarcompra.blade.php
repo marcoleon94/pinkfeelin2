@@ -263,7 +263,7 @@
                                    <div class="col s12">
 
 
-                                   <a class="btn waves-effect waves-light center" type="submit" name="action" style="margin-top:30px; margin-right: 30px;">Imprimir Ticket
+                                   <a class="btn waves-effect waves-light center" style="margin-top:30px; margin-right: 30px;" href="/pdf">Imprimir Ticket
                                      <i class="material-icons right">receipt</i>
                                    </a>
                                    </div>

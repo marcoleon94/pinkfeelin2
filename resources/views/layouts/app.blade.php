@@ -67,7 +67,7 @@
                                 {{ Auth::user()->name }} <i class="material-icons right">arrow_drop_down</i>
                             </a>
                         </li>
-                        <li><a href="{{url('/carrito')}}"><i class="material-icons right" style="font-size:50px;">shopping_cart</i><span class="carro" >0</span></a></li>
+                        <li><a href="{{url('/carrito')}}"><i class="material-icons right" style="font-size:50px;">shopping_cart</i><span class="carro" id="spcar"></span></a></li>
                     @endif
                 </ul>
               </div>

@@ -166,9 +166,10 @@ img.carro{
 }
 
 span.carro{
-  position:absolute;
-  left:210px;
+  position:relative;;
+  left:45px;
   bottom:7px;
+  
   color:#f48fb1;
   font-size: 12pt;
   background-color: none;

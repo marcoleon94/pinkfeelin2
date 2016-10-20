@@ -149,6 +149,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Skydiver\LaravelMaterializeCSS\MaterializeCSSServiceProvider::class,
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -205,6 +206,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'MaterializeCSS' => Skydiver\LaravelMaterializeCSS\MaterializeCSS::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
 
     ],
 
