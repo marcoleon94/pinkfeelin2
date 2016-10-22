@@ -28,9 +28,16 @@ class ControladorCarrito extends Controller
         $cant=$request->input('cant');
         $imag=$request->input('imag');
         $marc=$request->input('marc');
+        $oferta=$request->input('oferta');
+        if ($oferta!=null) {
+          $product=\pinkfeelin\Models\Product\Product::find($prodid);
+          $precio= $product->precio-($product->precio*$oferta);
+            Cart::add(array(['id'=>$product->id, 'name'=>$product->nombre, 'qty'=>$cant, 'price'=> $precio, 'options' =>['image'=>$imag, 'mark'=>$marc]]));
+        }else{
 
         $product=\pinkfeelin\Models\Product\Product::find($prodid);
         Cart::add(array(['id'=>$product->id, 'name'=>$product->nombre, 'qty'=>$cant, 'price'=>$product->precio, 'options' =>['image'=>$imag, 'mark'=>$marc]]));
+        }
       }
       $cart=Cart::content();
 

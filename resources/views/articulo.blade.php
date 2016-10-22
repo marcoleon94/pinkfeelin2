@@ -18,7 +18,15 @@
                           <br>
                               {{$product->marca}}
                           <br>
-                                ${{$product->precio}} MNX.</p>
+                      </p>
+                          @if ($ofertas)
+                            <p style="text-decoration:line-through;">
+                              ${{$product->precio}} MNX.</p><p>
+                                ${{$product->precio-($product->precio*$ofertas->descuento)}} MNX.</p>
+                                <input type="hidden" name="oferta" value="{{$ofertas->descuento}}">
+                          @else
+                              <p>${{$product->precio}} MNX.</p>
+                          @endif
                         <div class="row">
                             <div class="input-field col s3 push-s4">
                             <select name="cant">

@@ -164,12 +164,15 @@ img.carro{
   width: 180px;
   height: 180px;
 }
+ img.collage{
+   height: 180px;
+ }
 
 span.carro{
   position:relative;;
   left:45px;
   bottom:7px;
-  
+
   color:#f48fb1;
   font-size: 12pt;
   background-color: none;

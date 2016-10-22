@@ -26,23 +26,24 @@ class ControladorUsuarios extends Controller
       return view('atencion');
     }
     public function bolsas(){
-      $products = \pinkfeelin\Models\Product\Product::select('*')->where('tipo', 2)->paginate(3);
+      $products = \pinkfeelin\Models\Product\Product::select('*')->where('tipo', 2)->paginate(6);
       return view('bolsas')->with('products', $products);
     }
     public function vestidos(){
-      $products = \pinkfeelin\Models\Product\Product::select('*')->where('tipo', 1)->paginate(3);
+      $products = \pinkfeelin\Models\Product\Product::select('*')->where('tipo', 1)->paginate(6);
       return view('vestidos')->with('products', $products);
     }
     public function lentes(){
-      $products = \pinkfeelin\Models\Product\Product::select('*')->where('tipo', 3)->paginate(3);
+      $products = \pinkfeelin\Models\Product\Product::select('*')->where('tipo', 3)->paginate(6);
       return view('lentes')->with('products', $products);
     }
     public function articulo($id){
       $product =\pinkfeelin\Models\Product\Product::select('*')->where('id', $id)->first();
-      return view('articulo')->with('product', $product);
+      $ofertas =\pinkfeelin\Models\Product\Offer::select('*')->where('id_producto', $id)->first();
+      return view('articulo')->with('product', $product)->with('ofertas', $ofertas);
     }
     public function pdbelleza(){
-      $products = \pinkfeelin\Models\Product\Product::select('*')->where('tipo', 4)->paginate(3);
+      $products = \pinkfeelin\Models\Product\Product::select('*')->where('tipo', 4)->paginate(6);
       return view('pdbelleza')->with('products',$products);
     }
     public function realizarcompra(){

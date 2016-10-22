@@ -10,36 +10,36 @@
                  <!-- Sección para collage de imagenes -->
                  <div class="col s9">
                      <div class="row">
-                        <div class="col s3" style="margin:5px">
-                            <img src="images/ring.jpg" class="responsive-img">
+                        <div class="col s3">
+                            <img src="images/ring.jpg" class="responsive-img collage">
                          </div>
                          <div class="col s6">
-                            <img src="images/accesories2.jpg" class="responsive-img">
+                            <img src="images/accesories2.jpg" class="responsive-img collage">
                          </div>
                      </div>
                      <div class="row">
                          <div class="col s3" >
-                            <img src="images/bag.jpg" class="responsive-img">
+                            <img src="images/bag.jpg" class="responsive-img collage">
                          </div>
                          <div class="col s3">
-                             <a href="vestidos.php" class="btn waves-effect red white-text darken-text-2">Ver ahora</a>
+                             <a href="/vestidos" class="btn waves-effect red white-text darken-text-2" style="margin-top:50px; margin-left:20px;">Ver ahora</a>
                          </div>
 
                           <div class="col s3" >
-                            <img src="images/shoes.jpg" class="responsive-img">
+                            <img src="images/shoes.jpg" class="responsive-img collage">
                          </div>
                         </div>
                      <div class="row">
                           <div class="col s3" >
-                            <img src="images/shoes.jpg" class="responsive-img">
+                            <img src="images/lentes1.jpg" class="responsive-img collage">
                          </div>
 
                           <div class="col s3" >
-                            <img src="images/shoes.jpg" class="responsive-img">
+                            <img src="images/vestido1.jpg" class="responsive-img collage">
                          </div>
 
                           <div class="col s3" >
-                            <img src="images/shoes.jpg" class="responsive-img">
+                            <img src="images/pdb8.png" class="responsive-img collage">
                          </div>
                         </div>
 
@@ -48,9 +48,9 @@
                  <div class="col s3">
                      <h3  class="thin">Accesorios </h3><h3 class="bold">y ROPA</h3>
                      <p align="justify">
-                        Párrafo. Haz clic aquí para agregar tu propio texto y editar.
-                        Es fácil. Haz clic en Editar Texto o doble clic aquí para agregar tu contenido y cambiar la fuente. En este espacio puedes contar tu historia y permitir a tus usuarios saber más sobre ti.
-                     </p>
+                       Todo con la finalidad de  disfrutar y acercarte a los diferentes y padrísimos estilos que día con día te  presentamos en nuestro sito de internet;
+                       como bolsas, carteras, blusas,  pantalones, pashminas, sacos, chamarras, sombreros, jeans, lencería, playeras,  trajes de baños, vestidos,
+                       entre otros artículos que te encantarán.
                      <div class="row" >
                      <a href="https://www.facebook.com/PinkFeelin/"><img class="responsive-img" src="images/facebook.png" height="15%" width="15%"></a>
                      <a href="https://plus.google.com/"><img class="responsive-img" src="images/googleplus.png" height="15%" width="15%"></a>
@@ -84,7 +84,10 @@
                  </div>
                  <div class="col s1 headerDivider"></div>
                  <div class="col s6 ">
-                 <p align="justify">Párrafo. Haz clic aquí para agregar tu propio texto y editar. Es fácil. Haz clic en Editar Texto o doble clic aquí para agregar tu contenido y cambiar la fuente. En este espacio puedes contar tu historia y permitir a tus usuarios saber más sobre ti.</p>
+                 <p align="justify">
+                  En PinkFeelin' puedes comprar  lo más exclusivo en moda  y accesorios  para Dama,
+                  dale un toque especial a tú Out Fit de temporada y disfrutar  de las tendencias más importantes de la actualidad.
+                 </p>
                  </div>
              </div>
              <!--Tercera Sección-->
@@ -116,11 +119,11 @@
              </div>
              <div class="row">
                  <div id="favoritos" class="carousel">
-                    <a class="carousel-item " href="/articulo/6" ><img class="responsive-img" src="images/fav1.jpg"></a>
-                    <a class="carousel-item" href="/articulo/7" ><img class="responsive-img" src="images/fav2.jpg"></a>
-                    <a class="carousel-item" href="/articulo/8" ><img class="responsive-img " src="images/fav3.jpg"></a>
-                    <a class="carousel-item" href="/articulo/9" ><img class="responsive-img " src="images/fav4.jpg"></a>
-                    <a class="carousel-item" href="/articulo/5" ><img class="responsive-img " src="images/fav5.jpg"></a>
+                    <a class="carousel-item " href="/articulo/6" ><img class="responsive-img " src="images/fav1.jpg"></a>
+                    <a class="carousel-item " href="/articulo/7" ><img class="responsive-img " src="images/fav2.jpg"></a>
+                    <a class="carousel-item " href="/articulo/8" ><img class="responsive-img " src="images/fav3.jpg"></a>
+                    <a class="carousel-item " href="/articulo/9" ><img class="responsive-img " src="images/fav4.jpg"></a>
+                    <a class="carousel-item " href="/articulo/5" ><img class="responsive-img " src="images/fav5.jpg"></a>
                   </div>
              </div>
          </div>

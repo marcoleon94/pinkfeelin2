@@ -11,10 +11,16 @@ class Address extends Model
     protected $primarykey= 'id';
     public $timestamps=false;
     protected $fillable= [
-      'estado','ciudad','colonia','calle','numero','cp','id_usuario'
+      'id_estado','id_ciudad','colonia','calle','numero','cp','id_usuario'
     ];
 
     public function user(){
       return $this->belongsto(User::class);
+    }
+    public function state(){
+      return $this->belongsto(State::class)
+    }
+    public function city(){
+      return $this->belongsto(City::class)
     }
 }
