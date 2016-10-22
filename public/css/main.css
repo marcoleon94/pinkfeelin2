@@ -94,6 +94,12 @@ h5 {
 font-style: italic;
 }
 
+h5.compra {
+font-weight: bolder;
+font-style: italic;
+color: #f48fb1;
+}
+
 h2{
   font-style: italic;
   color: #f06292;

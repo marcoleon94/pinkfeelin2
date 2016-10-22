@@ -22,89 +22,120 @@
                           <li>
                             <div class="collapsible-header active left-align"><i class="material-icons">room</i>Direccion</div>
                             <div class="collapsible-body">
-                              <div class="row">
-                                <div class="form-group{{ $errors->has('estado') ? ' has-error' : '' }}">
-                                    <div class="input-field col s6">
-                                        <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
-                                        <i class="material-icons prefix">account_circle</i>
-                                        <input type="text" id="estado" class="validate" name="estado" >
-                                        <label for="estado" class="left-align">Estado</label>
-                                        @if ($errors->has('estado'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('estado') }}</strong>
-                                            </span>
-                                        @endif
-                                    </div>
+                              <div class="row" style="margin-top:30px;">
+
+                                <div class="col s6">
+                                  <a class="btn waves-effect waves-light selec" id="bdireccion">Hasta mi casa
+                                    <i class="material-icons right">credit_card</i>
+                                  </a>
                                 </div>
 
-                                <div class="form-group{{ $errors->has('ciudad') ? ' has-error' : '' }}">
-                                    <div class="input-field col s6">
-                                        <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
-                                        <i class="material-icons prefix">account_circle</i>
-                                        <input type="text" id="ciudad" class="validate" name="ciudad" >
-                                        <label for="ciudad" class="left-align">Ciudad</label>
-                                        @if ($errors->has('ciudad'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('ciudad') }}</strong>
-                                            </span>
-                                        @endif
-                                    </div>
+                                <div class="col s6">
+                                  <a class="btn waves-effect waves-light noselec" id="bonsite">Acudir al local
+                                    <i class="material-icons right">swap_horiz</i>
+                                  </a>
                                 </div>
 
-                                <div class="form-group{{ $errors->has('colonia') ? ' has-error' : '' }}">
-                                    <div class="input-field col s6">
-                                        <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
-                                        <i class="material-icons prefix">account_circle</i>
-                                        <input type="text" id="colonia" class="validate" name="colonia" >
-                                        <label for="colonia" class="left-align">Colonia</label>
-                                        @if ($errors->has('colonia'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('colonia') }}</strong>
-                                            </span>
-                                        @endif
-                                    </div>
+                                <div id="ddirec">
+
+                                  <div class="form-group{{ $errors->has('estado') ? ' has-error' : '' }}">
+                                      <div class="input-field col s6">
+                                          <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
+                                          <i class="material-icons prefix">account_circle</i>
+                                          <input type="text" id="estado" class="validate" name="estado" >
+                                          <label for="estado" class="left-align">Estado</label>
+                                          @if ($errors->has('estado'))
+                                              <span class="help-block">
+                                                  <strong>{{ $errors->first('estado') }}</strong>
+                                              </span>
+                                          @endif
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group{{ $errors->has('ciudad') ? ' has-error' : '' }}">
+                                      <div class="input-field col s6">
+                                          <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
+                                          <i class="material-icons prefix">account_circle</i>
+                                          <input type="text" id="ciudad" class="validate" name="ciudad" >
+                                          <label for="ciudad" class="left-align">Ciudad</label>
+                                          @if ($errors->has('ciudad'))
+                                              <span class="help-block">
+                                                  <strong>{{ $errors->first('ciudad') }}</strong>
+                                              </span>
+                                          @endif
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group{{ $errors->has('colonia') ? ' has-error' : '' }}">
+                                      <div class="input-field col s6">
+                                          <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
+                                          <i class="material-icons prefix">account_circle</i>
+                                          <input type="text" id="colonia" class="validate" name="colonia" >
+                                          <label for="colonia" class="left-align">Colonia</label>
+                                          @if ($errors->has('colonia'))
+                                              <span class="help-block">
+                                                  <strong>{{ $errors->first('colonia') }}</strong>
+                                              </span>
+                                          @endif
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group{{ $errors->has('calle') ? ' has-error' : '' }}">
+                                      <div class="input-field col s8">
+                                          <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
+                                          <i class="material-icons prefix">account_circle</i>
+                                          <input type="text" id="calle" class="validate" name="calle">
+                                          <label for="calle" class="left-align">Calle</label>
+                                          @if ($errors->has('calle'))
+                                              <span class="help-block">
+                                                  <strong>{{ $errors->first('calle') }}</strong>
+                                              </span>
+                                          @endif
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group{{ $errors->has('numero') ? ' has-error' : '' }}">
+                                      <div class="input-field col s4">
+                                          <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
+                                          <i class="material-icons prefix">account_circle</i>
+                                          <input type="text" id="numero" class="validate" name="numero" >
+                                          <label for="numero" class="left-align">Numero Exterior</label>
+                                          @if ($errors->has('numero'))
+                                              <span class="help-block">
+                                                  <strong>{{ $errors->first('numero') }}</strong>
+                                              </span>
+                                          @endif
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group{{ $errors->has('cp') ? ' has-error' : '' }}">
+                                      <div class="input-field col s4">
+                                          <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
+                                          <i class="material-icons prefix">account_circle</i>
+                                          <input type="text" id="cp" class="validate"  name="cp">
+                                          <label for="cp" class="left-align">C.P.</label>
+                                          @if ($errors->has('cp'))
+                                              <span class="help-block">
+                                                  <strong>{{ $errors->first('cp') }}</strong>
+                                              </span>
+                                          @endif
+                                      </div>
+                                  </div>
                                 </div>
 
-                                <div class="form-group{{ $errors->has('calle') ? ' has-error' : '' }}">
-                                    <div class="input-field col s8">
-                                        <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
-                                        <i class="material-icons prefix">account_circle</i>
-                                        <input type="text" id="calle" class="validate" name="calle">
-                                        <label for="calle" class="left-align">Calle</label>
-                                        @if ($errors->has('calle'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('calle') }}</strong>
-                                            </span>
-                                        @endif
+                                <div id="dlocal" style="display:none;">
+                                  <div class="row">
+                                    <div class="col s12" style="margin-top:20px;">
+                                      <h5 class="compra">Recoje tu pedido en cualquiera de nuestros locales:</h5>
                                     </div>
-                                </div>
-
-                                <div class="form-group{{ $errors->has('numero') ? ' has-error' : '' }}">
-                                    <div class="input-field col s4">
-                                        <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
-                                        <i class="material-icons prefix">account_circle</i>
-                                        <input type="text" id="numero" class="validate" name="numero" >
-                                        <label for="numero" class="left-align">Numero Exterior</label>
-                                        @if ($errors->has('numero'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('numero') }}</strong>
-                                            </span>
-                                        @endif
+                                    <div class="col s12" style="margin-top:20px;">
+                                      <ul style="margin-left: 30px;">
+                                        <li class="left">Local 1: Del Carmen 420-422, Colonia del Carmen, Aguascalientes, Ags.</li>
+                                        <li class="left">Local 2: Río Pirules 252, San Pablo, Aguascalientes, Ags.</li>
+                                        <li class="left">Local 3: General José María Arteaga 647, Primavera, Aguascalientes, Ags.</li>
+                                      </ul>
                                     </div>
-                                </div>
-
-                                <div class="form-group{{ $errors->has('cp') ? ' has-error' : '' }}">
-                                    <div class="input-field col s4">
-                                        <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
-                                        <i class="material-icons prefix">account_circle</i>
-                                        <input type="text" id="cp" class="validate"  name="cp">
-                                        <label for="cp" class="left-align">C.P.</label>
-                                        @if ($errors->has('cp'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('cp') }}</strong>
-                                            </span>
-                                        @endif
-                                    </div>
+                                  </div>
                                 </div>
                                 @if (Auth::check())
                                   <input type="hidden" name="id_usuario" id="id_usuario" value="{{Auth::user()->id}}">
@@ -121,7 +152,7 @@
                             <div class="collapsible-body">
                               <div class="row" style="margin-top:30px;">
                                 <div class="col s4">
-                                  <a class="btn waves-effect waves-light noselec" id="credito">Tarjeta de Credito
+                                  <a class="btn waves-effect waves-light selec" id="credito">Tarjeta de Credito
                                     <i class="material-icons right">credit_card</i>
                                   </a>
                                 </div>
@@ -140,7 +171,7 @@
 
 
 
-                                 <div class="" id="dcred" style="display:none;">
+                                 <div class="" id="dcred">
                                    <div class="row">
 
                                      <div class="form-group{{ $errors->has('nombre') ? ' has-error' : '' }}">
@@ -215,7 +246,7 @@
 
                                      <div class="input-field col s4" >
                                         <select class="icons" name="tipo">
-                                          <option value="0" >Choose your option</option>
+                                          <option value="0" >Tarjeta de credito</option>
                                           <option value="1" data-icon="images/visa.png" class="left circle">Visa</option>
                                           <option value="2" data-icon="images/master.png" class="left circle">Mastercard</option>
                                           <option value="3" data-icon="images/american.png" class="left circle">American Express</option>
@@ -281,41 +312,14 @@
                             <div class="collapsible-header left-align" id="sec3"><i class="material-icons">done</i>Confirmacion</div>
                             <div class="collapsible-body">
                               <div class="row">
-                                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                    <div class="input-field col s6">
-                                        <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
-                                        <i class="material-icons prefix">account_circle</i>
-                                        <input type="text" id="name" class="validate" >
-                                        <label for="name" class="left-align">Nombre</label>
-                                        @if ($errors->has('name'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('name') }}</strong>
-                                            </span>
-                                        @endif
-                                    </div>
-                                </div>
-
-                                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                    <div class="input-field col s6">
-                                        <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
-                                        <i class="material-icons prefix">account_circle</i>
-                                        <input type="text" id="name" class="validate" >
-                                        <label for="name" class="left-align">Nombre</label>
-                                        @if ($errors->has('name'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('name') }}</strong>
-                                            </span>
-                                        @endif
-                                    </div>
-                                </div>
-                                <div class="row right">
-                                  <p>Total: ${{Cart::total()}}</p>
+                                <div class="row">
+                                  <h5 class="compra">El importe que se cobrara es de:</h5>
+                                  <h5>Total: ${{Cart::total()}}</h5>
                                   <input type="hidden" name="importe" id="importe" value="{{Cart::total()}}">
                                 </div>
                                 <button class="btn waves-effect waves-light right" type="submit" name="action" id="comprar" style="margin-top:30px; margin-right: 30px;">Comprar
                                   <i class="material-icons right">mode_edit</i>
                                 </button>
-
                               </div>
                             </div>
                           </li>
