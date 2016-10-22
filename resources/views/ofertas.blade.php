@@ -8,10 +8,10 @@
              <!-- Primera Sección-->
              <div class="row" style="margin:4%;">
                @foreach ($products as $product)
-               <div class="col s4 m4">
+               <div class="col s4 m4" style="margin-top:35px;">
                   <div class="card">
                       <div class="card-image">
-                        <a href="/articulo/{{$product->id}}"><img class="responsirve-img" src="{{$product->imagen}}"></a>
+                        <a href="/articulo/{{$product->id}}"><img class="responsirve-img articulo" src="{{$product->imagen}}"></a>
                         <span class="card-title amber-text text-darken-1">{{$product->nombre}}</span>
                       </div>
                       <div class="card-content pink lighten-2">
@@ -26,7 +26,7 @@
                </div>
                @endforeach
              </div>
-            
+
          </div>
      </div>
     @endsection

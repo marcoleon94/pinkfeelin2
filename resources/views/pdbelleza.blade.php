@@ -7,7 +7,7 @@
              <!-- Primera Sección-->
              <div class="row" style="margin:4%;">
                @foreach ($products as $product)
-               <div class="col s4 m4">
+               <div class="col s4 m4" style="margin-top:35px;">
                   <div class="card">
                       <div class="card-image">
                         <a href="/articulo/{{$product->id}}"><img class="responsirve-img articulo" src="{{$product->imagen}}"></a>
