@@ -20,7 +20,7 @@
                                 <p>${{$product->precio}} MNX.</p>
                         </div>
                         <div class="card-action pink darken-4">
-                          <a href="#">Añadir a tu carrito</a>
+                          <a href="/articulo/{{$product->id}}">Añadir a tu carrito</a>
                         </div>
                       </div>
                  </div>

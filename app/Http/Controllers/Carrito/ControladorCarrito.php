@@ -28,6 +28,7 @@ class ControladorCarrito extends Controller
         $cant=$request->input('cant');
         $imag=$request->input('imag');
         $marc=$request->input('marc');
+        $tip=$request->input('tip');
 
         $product=\pinkfeelin\Models\Product\Product::find($prodid);
         Cart::add(array(['id'=>$product->id, 'name'=>$product->nombre, 'qty'=>$cant, 'price'=>$product->precio, 'options' =>['image'=>$imag, 'mark'=>$marc]]));
@@ -35,6 +36,18 @@ class ControladorCarrito extends Controller
       $cart=Cart::content();
 
       //dd($cart);
+      if($tip=='1'){
+        return redirect('/vestidos');
+      }
+      if($tip=='2'){
+        return redirect('/bolsas');
+      }
+      if($tip=='3'){
+        return redirect('/lentes');
+      }
+      if($tip=='4'){
+        return redirect('/pdbelleza');
+      }
       return view("carrito")->with('cart',$cart);
     }
     public function increase($product_id,$increment){

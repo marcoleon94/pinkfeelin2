@@ -37,6 +37,7 @@
                       <input type="hidden" name="prodid" value="{{$product->id}}">
                       <input type="hidden" name="imag" value="{{$product->imagen}}">
                       <input type="hidden" name="marc" value="{{$product->marca}}">
+                      <input type="hidden" name="tip" value="{{$product->tipo}}">
                       <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
                       <button class="btn" href="#" type="submit" id="agregar">Añadir a tu carrito</button>
                     </div>

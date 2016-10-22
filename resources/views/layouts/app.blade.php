@@ -237,6 +237,24 @@
               $('#dox').show();
             })
 
+            $('#bdireccion').click(function(){
+              $('#bdireccion').addClass('selec');
+              $('#bdireccion').removeClass('noselec');
+              $('#bonsite').addClass('noselec');
+              $('#bonsite').removeClass('selec');
+              $('#dlocal').hide();
+              $('#ddirec').show();
+            })
+
+            $('#bonsite').click(function(){
+              $('#bonsite').addClass('selec');
+              $('#bonsite').removeClass('noselec');
+              $('#bdireccion').addClass('noselec');
+              $('#bdireccion').removeClass('selec');
+              $('#ddirec').hide();
+              $('#dlocal').show();
+            })
+
             $('#agregar').click(function(){
               spancarro();
             })
