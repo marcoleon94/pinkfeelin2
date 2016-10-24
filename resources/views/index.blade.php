@@ -2,6 +2,7 @@
 
 @section('content')
      <div class="container">
+       @include('partials.messages')
          <div class="center">
             <h2>El Detalle Perfecto</h2>
             <div class="divider"></div>

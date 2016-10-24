@@ -8,6 +8,7 @@ use pinkfeelin\Http\Requests;
 use pinkfeelin\Http\Controllers\Controller;
 use Cart;
 use Auth;
+use Session;
 
 class ControladorCompras extends Controller
 {
@@ -84,6 +85,7 @@ class ControladorCompras extends Controller
           $product->save();
         }
         Cart::destroy();
+        Session::flash('compra','Se ha realizado tu compra exitosamente!');
         return redirect('/index');
 
     }
