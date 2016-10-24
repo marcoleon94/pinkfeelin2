@@ -22,6 +22,7 @@ Route::get('/bolsas', 'Usuarios\ControladorUsuarios@bolsas');
 Route::get('/pdbelleza', 'Usuarios\ControladorUsuarios@pdbelleza');
 Route::get('/articulo/{id}','Usuarios\ControladorUsuarios@articulo')->
 where('id', '[0-9]+');
+Route::get('/perfil','Usuarios\ControladorUsuarios@perfil')->middleware("auth");
 Route::get('/realizarcompra/historial','Compras\ControladorCompras@historial');
 Route::resource('realizarcompra', 'Compras\ControladorCompras');
 Route::get('/carrito', 'Carrito\ControladorCarrito@index');

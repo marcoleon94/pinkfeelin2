@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title','Historial de Compras')
 @section('content')
   @if ($compras)
     <div class="container">

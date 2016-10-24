@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title','{{$product->nombre}}')
 @section('content')
      <div class="container">
          <div class="center">

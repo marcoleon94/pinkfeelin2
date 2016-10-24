@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>Pink Feelin @yield('title')</title>
     <!-- Styles -->
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
@@ -34,6 +34,7 @@
                 <li><a href="/pdbelleza">Productos de Belleza</a></li>
               </ul>
               <ul id="UserMenu" class="dropdown-content" >
+                <li><a href="{{url('/perfil')}}"><i class="material-icons right">edit</i>Perfil</a></li>
                   <li><a href="{{url('/realizarcompra/historial')}}"><i class="material-icons right">history</i>Historial</a></li>
                   <li><a href="{{ url('/logout') }}"><i class="material-icons right">close</i>Cerrar Sesión</a></li>
               </ul>

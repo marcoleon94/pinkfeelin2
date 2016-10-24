@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title','Detalle de Compra')
 @section('content')
   @if ($contenido)
     <div class="container">

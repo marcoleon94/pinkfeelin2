@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use pinkfeelin\Http\Requests;
 use pinkfeelin\Http\Controllers\Controller;
 use Cart;
+use Auth;
 
 class ControladorUsuarios extends Controller
 {
@@ -49,6 +50,11 @@ class ControladorUsuarios extends Controller
     public function realizarcompra(){
       $cart=Cart::content();
       return view('realizarcompra')->with('cart', $cart);
+    }
+    public function perfil(){
+      $id_usuario= Auth::user()->id;
+      $user= \pinkfeelin\Models\User\User::find($id_usuario);
+      return view('perfil')->with('user', $user);
     }
 
 
