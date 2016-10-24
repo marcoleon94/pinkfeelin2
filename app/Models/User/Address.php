@@ -18,9 +18,9 @@ class Address extends Model
       return $this->belongsto(User::class);
     }
     public function state(){
-      return $this->belongsto(State::class)
+      return $this->belongsto(State::class);
     }
     public function city(){
-      return $this->belongsto(City::class)
+      return $this->belongsto(City::class);
     }
 }
