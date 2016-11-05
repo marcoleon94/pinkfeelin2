@@ -23,7 +23,7 @@
                       <p>Miembro desde: {{$user->created_at}}</p>
                     </div>
                     <div class="card-action">
-                      <button class="btn" href="#" type="submit" id="agregar">Editar Información <i class="material-icons right">edit</i></button>
+                      <a class="btn" href="/modificarperfil" type="submit" id="agregar">Editar Información <i class="material-icons right">edit</i></a>
                     </div>
                   </div>
                 </div>

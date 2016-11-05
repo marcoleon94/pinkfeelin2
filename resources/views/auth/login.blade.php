@@ -72,7 +72,7 @@
                               </button>
                             </div>
                             <div class="col left">
-                            <a href="{{ url('/password/reset') }}" style="color:pink; position: relative; top: 70px; right:30px;">Olvidaste tu contraseña?</a>
+                            <!--<a href="{{ url('/password/reset') }}" style="color:pink; position: relative; top: 70px; right:30px;">Olvidaste tu contraseña?</a>-->
                           </div>
                         </div>
                         </div>

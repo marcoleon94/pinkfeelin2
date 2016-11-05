@@ -98,7 +98,7 @@
                                       <div class="input-field col s4">
                                           <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
                                           <i class="material-icons prefix">account_circle</i>
-                                          <input type="text" id="numero" class="validate" name="numero" >
+                                          <input type="number" id="numero" class="validate" name="numero" >
                                           <label for="numero" class="left-align">Numero Exterior</label>
                                           @if ($errors->has('numero'))
                                               <span class="help-block">
@@ -112,7 +112,7 @@
                                       <div class="input-field col s4">
                                           <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
                                           <i class="material-icons prefix">account_circle</i>
-                                          <input type="text" id="cp" class="validate"  name="cp">
+                                          <input type="number" id="cp" class="validate"  name="cp">
                                           <label for="cp" class="left-align">C.P.</label>
                                           @if ($errors->has('cp'))
                                               <span class="help-block">
@@ -192,7 +192,7 @@
                                          <div class="input-field col s8">
                                              <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
                                              <i class="material-icons prefix">account_circle</i>
-                                             <input type="text" id="numero" class="validate" name='numero_tarjeta'>
+                                             <input type="number" id="numero" class="validate" name='numero_tarjeta'>
                                              <label for="numero" class="left-align">Numero de Tarjeta</label>
                                              @if ($errors->has('numero'))
                                                  <span class="help-block">
@@ -206,7 +206,7 @@
                                          <div class="input-field col s4">
                                              <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
                                              <i class="material-icons prefix">account_circle</i>
-                                             <input type="text" id="codigo" class="validate" name="codigo">
+                                             <input type="number" id="codigo" class="validate" name="codigo">
                                              <label for="codigo" class="left-align">Codigo</label>
                                              @if ($errors->has('codigo'))
                                                  <span class="help-block">
@@ -220,7 +220,7 @@
                                          <div class="input-field col s4">
                                              <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
                                              <i class="material-icons prefix">account_circle</i>
-                                             <input type="text" id="mes_exp" class="validate" name="mes_exp">
+                                             <input type="number" id="mes_exp" class="validate" name="mes_exp">
                                              <label for="mes_exp" class="left-align">Mes de Expiracion</label>
                                              @if ($errors->has('mes_exp'))
                                                  <span class="help-block">
@@ -234,7 +234,7 @@
                                          <div class="input-field col s4">
                                              <!-- <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"> -->
                                              <i class="material-icons prefix">account_circle</i>
-                                             <input type="text" id="año_exp" class="validate"  name="año_exp">
+                                             <input type="number" id="año_exp" class="validate"  name="año_exp">
                                              <label for="año_exp" class="left-align">Año de Expiracion</label>
                                              @if ($errors->has('año_exp'))
                                                  <span class="help-block">

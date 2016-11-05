@@ -99,7 +99,7 @@
                  <div class="col s3">
                     <div class="carousel carousel-slider " data-indicators="true">
                         <div class="carousel-fixed-item center">
-                          <a href="ofertas.php" class="btn waves-effect red white-text darken-text-2">Ofertas</a>
+                          <a href="/ofertas" class="btn waves-effect red white-text darken-text-2">Ofertas</a>
                         </div>
                         <div class="carousel-item black white-text" href="#one!">
                             <h5 class="italic-text">Oferta de verano</h5>

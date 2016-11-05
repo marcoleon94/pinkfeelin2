@@ -56,6 +56,11 @@ class ControladorUsuarios extends Controller
       $user= \pinkfeelin\Models\User\User::find($id_usuario);
       return view('perfil')->with('user', $user);
     }
+    public function modificar(){
+      $id_usuario=Auth::user()->id;
+      $user= \pinkfeelin\Models\User\User::find($id_usuario);
+      return view('modificarperfil')->with('user', $user);
+    }
 
 
 }
