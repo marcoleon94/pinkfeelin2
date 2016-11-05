@@ -32,6 +32,8 @@ Route::get('/carrito/{product_id}/{increase}', 'Carrito\ControladorCarrito@incre
 Route::get('/carrito/{product_id}/{decrease}', 'Carrito\ControladorCarrito@increase')->where('decrease','sub');
 Route::get('/icono', 'Icono\ControladorIcono@icono');
 Route::get('/pdf','Pdf\ControladorPdf@create');
+Route::get('/dashboard', 'Charts\ControladorChart@index');
+
 
 
 Route::auth();
