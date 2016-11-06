@@ -18,7 +18,7 @@ class ControladorChart extends Controller
       $envios= \pinkfeelin\Models\User\Address::select(DB::raw('count(id) as ventas, if(colonia not like "",\'true\',\'false\') as envio '))->groupBy('envio')->get();
       $pagos= \pinkfeelin\Models\User\Payment::select(DB::raw('count(id) as ventas, if(numero not like "",\'tarjeta\',\'otro\') as tipodepago '))->groupBy('tipodepago')->get();
       $tarjetas=\pinkfeelin\Models\User\Payment::select(DB::raw('count(id) as ventas, if(numero not like "",\'tarjeta\',\'otro\') as tipodepago, tipo '))->groupBy('tipodepago','tipo')->get();
-      $compras= \pinkfeelin\Models\User\User::select(DB::raw('name, lastname, sexo, count(buys.id) as compras, sum(replace(importe,\',\',\'\')) as total_compras'))->join('buys','users.id','=','buys.id_usuario')->groupBy('users.id')->get();
+      $compras= \pinkfeelin\Models\User\User::select(DB::raw('name, lastname,year(sysdate())-substring_index(fecha_nac,\',\',-1) as edad, sexo, count(buys.id) as compras, sum(replace(importe,\',\',\'\')) as total_compras'))->join('buys','users.id','=','buys.id_usuario')->groupBy('users.id')->get();
       return view('chart')->with('clientes',$clientes)->with('nuevos', $nuevos)->with('ventames', $ventames)->with('masvendidos', $masvendidos)->with('envios', $envios)->with('pagos', $pagos)->with('tarjetas', $tarjetas)->with('compras', $compras);
     }
 }
