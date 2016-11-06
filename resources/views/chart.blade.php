@@ -17,44 +17,17 @@
                         <div class="card-header" style="background-color: #f48fb1; color: white; border-top-left-radius: 13px; border-top-right-radius: 13px; padding-left: 10px;">
                             <div class="row">
                                 <div class="col s12 left-align">
-                                    <h4>Grafica 1</h4>
+                                    <h4>Grafica</h4>
                                 </div>
                             </div>
                         </div>
 
                         <div class="card-content">
                           <div id="dashboard_div">
-                            <div class="row">
-                              <div class="col s6">
-                                  <!--Divs that will hold each control and chart-->
-                                  <div class="row">
-                                    <div class="col s12 center">
-                                      <div id="filter_div"></div>
-                                    </div>
-                                    <div class="col s12">
-                                      <div id="chartp_div"></div>
-                                    </div>
-                                  </div>
-                              </div>
-                              <div class="col s6">
-                                <div class="row">
-                                  <div class="col s6">
-                                    <div  id="filterg_div" ></div>
-                                  </div>
-                                  <div class="col s6">
-                                    <div  id="filtern_div"></div>
-                                  </div>
-                                  <div class="col s12">
-                                    <div id="table_div" ></div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col s6">
-                                <div id="coldiv_div" style="width: 100%; height: 500px;"></div>
-                              </div>
-                            </div>
+                            <!--Divs that will hold each control and chart-->
+                            <div id="filter_div"></div>
+                            <div id="chart_div"></div>
+
                           </div>
                          </div>
                     </div>
@@ -87,22 +60,8 @@
                     </div>
                 </div>
 
-                <div class="col s12">
-                    <div class="card bordered" style="margin:5% auto; border-radius: 13px;">
-                        <div class="card-header" style="background-color: #f48fb1; color: white; border-top-left-radius: 13px; border-top-right-radius: 13px; padding-left: 10px;">
-                            <div class="row">
-                                <div class="col s12 left-align">
-                                    <h4>Grafica 3</h4>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="card-content">
-                          <div id="chart_div"></div>
 
-                        </div>
-                    </div>
-                </div>
 
 
             </div>
@@ -214,7 +173,6 @@
       }
     </script> --}}
 @endsection
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 {{-- --------------------------------------------grafica 1 --}}
 <script type="text/javascript">
