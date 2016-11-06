@@ -3,7 +3,16 @@
 @section('content')
   @if ($compras)
     <div class="container">
+      <div class="card">
+        <div class="card-header" style="background-color: #f48fb1; color: white; border-top-left-radius: 13px; border-top-right-radius: 13px; padding-left: 10px;">
+            <div class="row">
+                <div class="col s12 center">
 
+                    <h5>Historial de Compras</h5>
+                </div>
+            </div>
+        </div>
+      <div class="card-content">
       <table class="highlight">
         <thead>
           <tr>
@@ -29,6 +38,8 @@
           @endforeach
         </tbody>
       </table>
+      </div>
+      </div>
 
   </div>
     @else
