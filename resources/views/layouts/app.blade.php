@@ -34,6 +34,9 @@
                 <li><a href="/pdbelleza">Productos de Belleza</a></li>
               </ul>
               <ul id="UserMenu" class="dropdown-content" >
+                @if (!Auth::guest() && Auth::user()->tipo==1)
+                  <li><a href="{{url('/dashboard')}}"><i class="material-icons right">dashboard</i>Dashboard</a></li>
+                @endif
                 <li><a href="{{url('/perfil')}}"><i class="material-icons right">edit</i>Perfil</a></li>
                   <li><a href="{{url('/realizarcompra/historial')}}"><i class="material-icons right">history</i>Historial</a></li>
                   <li><a href="{{ url('/logout') }}"><i class="material-icons right">close</i>Cerrar Sesión</a></li>

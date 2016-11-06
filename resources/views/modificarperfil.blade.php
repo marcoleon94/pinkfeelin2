@@ -15,7 +15,7 @@
                   </div>
                 </div>
                 <div class="card-content">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/updateUser') }}">
                         {{ csrf_field() }}
                       <div class="row">
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -110,6 +110,7 @@
                                 <i class="material-icons prefix">email</i>
                                 <input type="text" id="email" class="validate" name="email" value="{{$user->email}}">
                                 <label for="email" class="left-align">E-mail</label>
+                                <input type="hidden" name="id" value="{{$user->id}}">
 
                                 @if ($errors->has('email'))
                                   <div class="left-align">
