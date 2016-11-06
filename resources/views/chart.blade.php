@@ -52,6 +52,10 @@
                             <br>[{{$tarjeta->tipo}},{{$tarjeta->tipodepago}},{{$tarjeta->ventas}}]
 
                           @endforeach
+                          @foreach ($compras as $compra)
+                            <br>[{{$compra->name}},{{$compra->lastname}},{{$compra->compras}},{{$compra->total_compras}}]
+
+                          @endforeach
                             <div id="columnchart_material" style="width: 900px; height: 500px;"></div>
 
                          </div>
