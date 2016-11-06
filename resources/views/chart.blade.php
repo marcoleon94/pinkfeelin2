@@ -3,22 +3,17 @@
 @section('content')
 
 
-
-
-
-      <div class="container">
          <div class="center">
-            <h2>Dashboard</h2>
            <div class="divider"></div>
           <!--Segunda Sección-->
-            <div class="row" style="margin:4%; text-align:left;">
+            <div class="row" style="text-align:left;">
                 <div class="col s12">
-                    <div class="card bordered" style="margin:5% auto; border-radius: 13px;">
+                    <div class="card bordered" style="margin:3% auto; border-radius: 13px;">
                       <div class="card-header" style="background-color: #f48fb1; color: white; border-top-left-radius: 13px; border-top-right-radius: 13px; padding-left: 10px;">
                           <div class="row">
                               <div class="col s12 left-align">
 
-                                  <h4>Grafica 1</h4>
+                                  <h4>Dashboard</h4>
                               </div>
                           </div>
                       </div>
@@ -26,7 +21,7 @@
                       <div class="card-content">
                         <div id="dashboard_div">
                           <div class="row">
-                            <div class="col s6">
+                            <div class="col s4">
                                 <!--Divs that will hold each control and chart-->
                                 <div class="row">
                                   <div class="col s12 center">
@@ -37,7 +32,7 @@
                                   </div>
                                 </div>
                             </div>
-                            <div class="col s6">
+                            <div class="col s4">
                               <div class="row">
                                 <div class="col s6">
                                   <div id="filterg_div" ></div>
@@ -50,58 +45,44 @@
                                 </div>
                               </div>
                             </div>
-                          </div>
-                          <div class="row">
-                            <div class="col s6">
-                              <div id="coldiv_div" style="width: 100%; height: 500px;"></div>
+                            <div class="col s4">
+                              <div id="coldiv_div"></div>
                             </div>
                           </div>
+
+                          <div class="row">
+                            <div class="col s4">
+                              <div id="piesex_div"></div>
+                            </div>
+                            <div class="col s4">
+                              <div id="baredad_div"></div>
+                            </div>
+                            <div class="col s4">
+                              <div id="pietar_div"></div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col s12">
+                              <div id="chart_div" style="height:500px;"></div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col s4">
+                              <div id="colprod_div"></div>
+                            </div>
+                            <div class="col s4 center">
+                              <div id="table_sort_div"></div>
+                            </div>
+                            <div class="col s4">
+                              <div id="chart_sort_div"></div>
+                            </div>
+                          </div>
+
                         </div>
                        </div>
                   </div>
-              </div>
-
-              <div class="col s12">
-                  <div class="card bordered" style="margin:5% auto; border-radius: 13px;">
-                      <div class="card-header" style="background-color: #f48fb1; color: white; border-top-left-radius: 13px; border-top-right-radius: 13px; padding-left: 10px;">
-                          <div class="row">
-                              <div class="col s12 left-align">
-                                  <h4>Grafica 2</h4>
-                              </div>
-                          </div>
-                      </div>
-
-                      <div class="card-content">
-                        <div class="row">
-                          <div class="col s6">
-                            <div id="table_sort_div"></div>
-                          </div>
-                          <div class="col s6">
-                            <div id="chart_sort_div"></div>
-                          </div>
-                        </div>
-
-                       </div>
-                  </div>
-              </div>
-
-              <div class="col s12">
-                  <div class="card bordered" style="margin:5% auto; border-radius: 13px;">
-                      <div class="card-header" style="background-color: #f48fb1; color: white; border-top-left-radius: 13px; border-top-right-radius: 13px; padding-left: 10px;">
-                          <div class="row">
-                              <div class="col s12 left-align">
-                                  <h4>Grafica 3</h4>
-                              </div>
-                          </div>
-                      </div>
-
-                      <div class="card-content">
-                        <div id="chart_div"></div>
-
-                      </div>
-                  </div>
-              </div>
-
 
           </div>
 
@@ -190,7 +171,7 @@
       'containerId': 'table_div',
       'options': {
         'width': 500,
-        'height': 400,
+        'height': 300,
         'title': 'Clientes'
       },
       // The pie chart will use the columns 'Name' and 'Donuts eaten'
@@ -227,16 +208,16 @@
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses'],
-          ['2013',  1000,      400],
-          ['2014',  1170,      460],
-          ['2015',  660,       1120],
-          ['2016',  1030,      540]
+          ['Año', 'Ventas', 'Gastos'],
+          ['2013',  10000,      4000],
+          ['2014',  11700,      4600],
+          ['2015',  6600,       11200],
+          ['2016',  10300,      5400]
         ]);
 
         var options = {
-          title: 'Company Performance',
-          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          title: 'Desempeño del Negocio',
+          hAxis: {title: 'Año',  titleTextStyle: {color: '#333'}},
           vAxis: {minValue: 0}
         };
 
@@ -245,31 +226,167 @@
       }
     </script>
 
+{{-- --------------------------------------------grafica Sexo --}}
+
+
+        <script type="text/javascript">
+
+          google.charts.setOnLoadCallback(drawChart);
+          function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+              ['Sexo', 'Cantidad'],
+              @foreach ($clientes as $cliente)
+                ['{{$cliente->sexo}}', {{$cliente->cantidad}}],
+              @endforeach
+            ]);
+
+            var options = {
+              title: 'Sexo de Usuarios',
+              width: 500,
+              height: 400,
+              pieHole: 0.4,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piesex_div'));
+            chart.draw(data, options);
+          }
+        </script>
+
+{{-- --------------------------------------------grafica edad --}}
+
+        <script type="text/javascript">
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+              var data = google.visualization.arrayToDataTable([
+                ["Nombre", "Edad"],
+                @foreach ($compras as $compra)
+                  ['{{$compra->name}}', {{$compra->edad}}],
+                @endforeach
+              ]);
+
+              var options = {
+                title: "Edad de los Usuarios",
+                width: 600,
+                height: 400,
+                bar: {groupWidth: "75%"},
+                legend: { position: "none" },
+              };
+              var chart = new google.visualization.BarChart(document.getElementById("baredad_div"));
+              chart.draw(data, options);
+          }
+          </script>
+
+
+
+          {{-- --------------------------------------------grafica mas vendidos --}}
+
+                  <script type="text/javascript">
+                      google.charts.setOnLoadCallback(drawChart);
+                      function drawChart() {
+                        var data = google.visualization.arrayToDataTable([
+                          ["Nombre", "Edad"],
+                          @foreach ($masvendidos as $prod)
+                            @if ($prod->tipo == 1)
+                            ['Vestidos', {{$prod->cantidad}}],
+                            @endif
+
+                            @if ($prod->tipo == 2)
+                            ['Bolsas', {{$prod->cantidad}}],
+                            @endif
+
+                            @if ($prod->tipo == 3)
+                            ['Lentes', {{$prod->cantidad}}],
+                            @endif
+
+                            @if ($prod->tipo == 4)
+                            ['P Belleza', {{$prod->cantidad}}],
+                            @endif
+
+                          @endforeach
+                        ]);
+
+                        var options = {
+                          title: "Venta de Productos",
+                          width: 600,
+                          height: 400,
+                          bar: {groupWidth: "75%"},
+                          legend: { position: "none" },
+                        };
+                        var chart = new google.visualization.ColumnChart(document.getElementById("colprod_div"));
+                        chart.draw(data, options);
+                    }
+                    </script>
+
+
+                    {{-- --------------------------------------------grafica Tarjetas --}}
+
+
+                            <script type="text/javascript">
+
+                              google.charts.setOnLoadCallback(drawChart);
+                              function drawChart() {
+                                var data = google.visualization.arrayToDataTable([
+                                  ['Tipo', 'Ventas'],
+                                  @foreach ($tarjetas as $tarjeta)
+
+                                    @if ($tarjeta->tipo == 0)
+
+                                    @endif
+
+                                    @if ($tarjeta->tipo == 1)
+                                      ['Visa', {{$tarjeta->ventas}}],
+                                    @endif
+
+                                    @if ($tarjeta->tipo == 2)
+                                      ['Mastercard', {{$tarjeta->ventas}}],
+                                    @endif
+
+                                    @if ($tarjeta->tipo == 3)
+                                      ['American Express', {{$tarjeta->ventas}}],
+                                    @endif
+                                  @endforeach
+                                ]);
+
+                                var options = {
+                                  title: 'Tarjetas usadas por los clientes',
+                                  width: 500,
+                                  height: 400,
+                                  is3D: true,
+                                };
+
+                                var chart = new google.visualization.PieChart(document.getElementById('pietar_div'));
+                                chart.draw(data, options);
+                              }
+                            </script>
+
+
+
 {{-- --------------------------------------------grafica 2 --}}
 
     <script type="text/javascript">
       google.charts.setOnLoadCallback(drawSort);
       function drawSort() {
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Name');
-        data.addColumn('number', 'Salary');
+        data.addColumn('string', 'Nombre');
+        data.addColumn('number', 'Salario');
         data.addColumn('boolean', 'Full Time');
         data.addRows(5);
-        data.setCell(0, 0, 'John');
+        data.setCell(0, 0, 'Juan');
         data.setCell(0, 1, 10000);
         data.setCell(0, 2, true);
-        data.setCell(1, 0, 'Mary');
+        data.setCell(1, 0, 'Maria');
         data.setCell(1, 1, 25000);
         data.setCell(1, 2, true);
-        data.setCell(2, 0, 'Steve');
+        data.setCell(2, 0, 'Santiago');
         data.setCell(2, 1, 8000);
         data.setCell(2, 2, false);
-        data.setCell(3, 0, 'Ellen');
+        data.setCell(3, 0, 'Elena');
         data.setCell(3, 1, 20000);
         data.setCell(3, 2, true);
-        data.setCell(4, 0, 'Mike');
+        data.setCell(4, 0, 'Miguel');
         data.setCell(4, 1, 12000);
         data.setCell(4, 2, false);
+
 
         var formatter = new google.visualization.NumberFormat({prefix: '$'});
         formatter.format(data, 1); // Apply formatter to second column
@@ -278,7 +395,7 @@
         view.setColumns([0, 1]);
 
         var table = new google.visualization.Table(document.getElementById('table_sort_div'));
-        table.draw(view, {width: '400', height: '400'});
+        table.draw(view, {width: '400', height: '300'});
 
         var chart = new google.visualization.ColumnChart(document.getElementById('chart_sort_div'));
         chart.draw(view, {width: '400', height: '400'});
