@@ -59,11 +59,7 @@
                          </div>
                     </div>
                 </div>
-                          @foreach ($nuevos as $nuevo)
-                            ['{{$nuevo->mes}}',{{$nuevo->conteo}}],
-                          @endforeach
-                          @foreach ($ventames as $venta )
-                            [{{$venta->total}}]
+
 
                 <div class="col s12">
                     <div class="card bordered" style="margin:5% auto; border-radius: 13px;">
@@ -85,27 +81,6 @@
                             </div>
                           </div>
 
-                          @endforeach
-                          @foreach ($masvendidos as $masvendido )
-                            <br>[{{$masvendido->tipo}},{{$masvendido->cantidad}}]
-
-                          @endforeach
-                          @foreach ($envios as $envio)
-                            <br>[{{$envio->envio}}, {{$envio->ventas}}]
-
-                          @endforeach
-                          @foreach ($pagos as $pago)
-                            <br>[{{$pago->tipodepago}},{{$pago->ventas}} ]
-
-                          @endforeach
-                          @foreach ($tarjetas as $tarjeta)
-                            <br>[{{$tarjeta->tipo}},{{$tarjeta->tipodepago}},{{$tarjeta->ventas}}]
-
-                          @endforeach
-                          @foreach ($compras as $compra)
-                            <br>[{{$compra->name}},{{$compra->lastname}},{{$compra->compras}},{{$compra->total_compras}}]
-
-                          @endforeach
                             <div id="columnchart_material" style="width: 900px; height: 500px;"></div>
 
                          </div>
@@ -135,10 +110,34 @@
     </div>
 
 
+    @foreach ($nuevos as $nuevo)
+      ['{{$nuevo->mes}}',{{$nuevo->conteo}}],
+    @endforeach
+    @foreach ($ventames as $venta )
+      [{{$venta->total}}]
+    @endforeach
+    @foreach ($masvendidos as $masvendido )
+      <br>[{{$masvendido->tipo}},{{$masvendido->cantidad}}]
 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    @endforeach
+    @foreach ($envios as $envio)
+      <br>[{{$envio->envio}}, {{$envio->ventas}}]
 
-    <script type="text/javascript">
+    @endforeach
+    @foreach ($pagos as $pago)
+      <br>[{{$pago->tipodepago}},{{$pago->ventas}} ]
+
+    @endforeach
+    @foreach ($tarjetas as $tarjeta)
+      <br>[{{$tarjeta->tipo}},{{$tarjeta->tipodepago}},{{$tarjeta->ventas}}]
+
+    @endforeach
+
+
+
+    {{-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> --}}
+
+    {{-- <script type="text/javascript">
 
       // Load the Visualization API and the controls package.
       google.charts.load('current', {'packages':['corechart', 'controls']});
@@ -213,10 +212,9 @@
 
         chart.draw(data, options);
       }
-    </script>
+    </script> --}}
 @endsection
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
 
 {{-- --------------------------------------------grafica 1 --}}
 <script type="text/javascript">
@@ -233,14 +231,10 @@
 
     // Create our data table.
     var data = google.visualization.arrayToDataTable([
-      ['Name', 'Gender', 'Age', 'Donuts eaten'],
-      ['Michael' , 'Male', 12, 5],
-      ['Elisa', 'Female', 20, 7],
-      ['Robert', 'Male', 7, 3],
-      ['John', 'Male', 54, 2],
-      ['Jessica', 'Female', 22, 6],
-      ['Aaron', 'Male', 3, 1],
-      ['Margareth', 'Female', 42, 8]
+      ['Nombre', 'Apellido', 'Sexo', 'Compras', 'Total'],
+      @foreach ($compras as $compra)
+        ['{{$compra->name}}', '{{$compra->lastname}}', '{{$compra->sexo}}', {{$compra->compras}}, {{$compra->total_compras}}],
+      @endforeach
     ]);
 
 
@@ -253,7 +247,7 @@
       'controlType': 'NumberRangeFilter',
       'containerId': 'filter_div',
       'options': {
-        'filterColumnLabel': 'Donuts eaten',
+        'filterColumnLabel': 'Compras',
         'ui': {
           'labelStacking': 'vertical'
         }
@@ -264,7 +258,7 @@
       'controlType': 'CategoryFilter',
       'containerId': 'filterg_div',
       'options': {
-        'filterColumnLabel': 'Gender',
+        'filterColumnLabel': 'Sexo',
         'ui': {
           'allowMultiple': false
 
@@ -277,7 +271,7 @@
       'controlType': 'StringFilter',
       'containerId': 'filtern_div',
       'options': {
-        'filterColumnLabel': 'Name',
+        'filterColumnLabel': 'Nombre',
         'ui': {
           'labelStacking': 'vertical'
         }
@@ -292,7 +286,7 @@
       'options': {
         'width': 500,
         'height': 400,
-        'title': 'Donuts eaten per person'
+        'title': 'Compras realizadas por Cliente'
       },
       // The pie chart will use the columns 'Name' and 'Donuts eaten'
       // out of all the available ones.
@@ -305,11 +299,11 @@
       'options': {
         'width': 500,
         'height': 400,
-        'title': 'Donuts eaten per person'
+        'title': 'Clientes'
       },
       // The pie chart will use the columns 'Name' and 'Donuts eaten'
       // out of all the available ones.
-      'view': {'columns': [0, 1, 2, 3]}
+      'view': {'columns': [0, 1, 2, 3, 4]}
     });
 
     var columnC = new google.visualization.ChartWrapper({
@@ -318,11 +312,11 @@
       'options': {
         'width': 500,
         'height': 400,
-        'title': 'Ages'
+        'title': 'Total por Cliente'
       },
       // The pie chart will use the columns 'Name' and 'Donuts eaten'
       // out of all the available ones.
-      'view': {'columns': [0, 2]}
+      'view': {'columns': [0, 4]}
     });
 
     // Establish dependencies, declaring that 'filter' drives 'pieChart',
