@@ -35,6 +35,10 @@ Route::get('/carrito/{product_id}/{decrease}', 'Carrito\ControladorCarrito@incre
 Route::get('/icono', 'Icono\ControladorIcono@icono');
 Route::get('/pdf','Pdf\ControladorPdf@create');
 Route::get('/dashboard', 'Charts\ControladorChart@index');
+Route::get('/mobile/login', 'MobileController@index');
+Route::post('/mobile/login', 'MobileController@auth');
+Route::post('/mobile/historial', 'MobileController@historial');
+Route::post('/mobile/detalle','MobileController@detalle');
 
 
 
