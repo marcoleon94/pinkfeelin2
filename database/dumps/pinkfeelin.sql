@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `pinkfeelin` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `pinkfeelin`;
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: pinkfeelin
@@ -35,8 +33,8 @@ CREATE TABLE `address` (
   `id_usuario` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `address_id_usuario_foreign` (`id_usuario`),
-  CONSTRAINT `address_id_usuario_foreign` FOREIGN KEY (`id_usuario`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  CONSTRAINT `address_id_usuario_foreign` FOREIGN KEY (`id_usuario`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +43,7 @@ CREATE TABLE `address` (
 
 LOCK TABLES `address` WRITE;
 /*!40000 ALTER TABLE `address` DISABLE KEYS */;
-INSERT INTO `address` VALUES (1,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(2,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(3,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(4,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(5,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(6,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(7,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(8,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(9,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(10,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(11,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(12,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(13,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(14,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(15,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1);
+INSERT INTO `address` VALUES (1,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(2,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(3,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(4,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(5,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(6,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(7,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(8,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(9,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(10,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(11,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(12,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(13,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(14,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(15,'Aguascalientes','Aguascalientes','casa blanca','vivero de la loma #210',210,20297,1),(16,'','','Casa Blanca','vivero de la loma #210',210,20297,1),(17,'','','','',0,0,1),(18,'','','','',0,0,1),(19,'','','Me queda claro','calle del pelos',69,12345,3),(20,'','','','',0,0,4),(21,'','','sdfghjdfgh','vivero de la loma #210',123,20297,5),(22,'','','','',0,0,5),(23,'','','Casa Blanca','vivero de la loma #210',210,20297,1);
 /*!40000 ALTER TABLE `address` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -64,8 +62,8 @@ CREATE TABLE `buys` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `buys_id_usuario_foreign` (`id_usuario`),
-  CONSTRAINT `buys_id_usuario_foreign` FOREIGN KEY (`id_usuario`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=489201 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  CONSTRAINT `buys_id_usuario_foreign` FOREIGN KEY (`id_usuario`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=476665 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -74,7 +72,7 @@ CREATE TABLE `buys` (
 
 LOCK TABLES `buys` WRITE;
 /*!40000 ALTER TABLE `buys` DISABLE KEYS */;
-INSERT INTO `buys` VALUES (31359,1,'1,936.00','2016-10-16 22:05:48','2016-10-16 22:05:48'),(35264,1,'1,936.00','2016-10-16 21:08:39','2016-10-16 21:08:39'),(35909,1,'1,936.00','2016-10-16 23:26:00','2016-10-16 23:26:00'),(36217,1,'1,936.00','2016-10-16 21:06:56','2016-10-16 21:06:56'),(36238,1,'1,936.00','2016-10-16 21:56:26','2016-10-16 21:56:26'),(37067,1,'1,936.00','2016-10-16 21:06:56','2016-10-16 21:06:56'),(45327,1,'1,936.00','2016-10-16 21:12:16','2016-10-16 21:12:16'),(45959,1,'1,936.00','2016-10-16 22:01:37','2016-10-16 22:01:37'),(46929,1,'1,936.00','2016-10-16 21:07:46','2016-10-16 21:07:46'),(48440,1,'1,936.00','2016-10-16 21:12:16','2016-10-16 21:12:16'),(48529,1,'1,936.00','2016-10-16 21:08:40','2016-10-16 21:08:40'),(273922,1,'1,936.00','2016-10-16 22:21:39','2016-10-16 22:21:39'),(345452,1,'1,936.00','2016-10-16 22:20:01','2016-10-16 22:20:01'),(435513,1,'1,936.00','2016-10-16 22:19:13','2016-10-16 22:19:13'),(489200,1,'1,936.00','2016-10-16 22:40:06','2016-10-16 22:40:06');
+INSERT INTO `buys` VALUES (71624,1,'7,308.00','2016-11-05 22:08:06','2016-11-05 22:08:06'),(93225,3,'4,176.00','2016-10-24 20:57:32','2016-10-24 20:57:32'),(107353,4,'3,596.00','2016-10-25 00:11:19','2016-10-25 00:11:19'),(254601,1,'348.00','2016-10-24 04:03:26','2016-10-24 04:03:26'),(270422,1,'464.00','2016-10-24 04:00:18','2016-10-24 04:00:18'),(347474,5,'2,668.00','2016-10-25 00:34:01','2016-10-25 00:34:01'),(457645,5,'1,160.00','2016-10-25 00:35:53','2016-10-25 00:35:53'),(476664,1,'5,272.20','2016-10-24 03:49:12','2016-10-24 03:49:12');
 /*!40000 ALTER TABLE `buys` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -91,7 +89,7 @@ CREATE TABLE `cities` (
   `id_estado` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `cities_id_estado_foreign` (`id_estado`),
-  CONSTRAINT `cities_id_estado_foreign` FOREIGN KEY (`id_estado`) REFERENCES `states` (`id`)
+  CONSTRAINT `cities_id_estado_foreign` FOREIGN KEY (`id_estado`) REFERENCES `states` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=2459 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -120,9 +118,9 @@ CREATE TABLE `contains` (
   PRIMARY KEY (`id`),
   KEY `contains_id_compra_foreign` (`id_compra`),
   KEY `contains_id_producto_foreign` (`id_producto`),
-  CONSTRAINT `contains_id_compra_foreign` FOREIGN KEY (`id_compra`) REFERENCES `buys` (`id`),
-  CONSTRAINT `contains_id_producto_foreign` FOREIGN KEY (`id_producto`) REFERENCES `products` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  CONSTRAINT `contains_id_compra_foreign` FOREIGN KEY (`id_compra`) REFERENCES `buys` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `contains_id_producto_foreign` FOREIGN KEY (`id_producto`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -131,7 +129,7 @@ CREATE TABLE `contains` (
 
 LOCK TABLES `contains` WRITE;
 /*!40000 ALTER TABLE `contains` DISABLE KEYS */;
-INSERT INTO `contains` VALUES (1,31359,6,2),(2,31359,7,1),(3,435513,6,2),(4,345452,6,2),(5,273922,6,2),(6,273922,7,1),(7,489200,6,2),(8,489200,7,1),(9,35909,6,2),(10,35909,7,1);
+INSERT INTO `contains` VALUES (1,476664,11,3),(2,476664,18,3),(3,476664,27,3),(4,270422,17,1),(5,254601,24,1),(6,93225,10,4),(7,107353,51,3),(8,107353,27,1),(9,347474,11,1),(10,347474,8,1),(11,347474,18,2),(12,457645,25,4),(13,71624,6,3),(14,71624,15,4),(15,71624,22,4);
 /*!40000 ALTER TABLE `contains` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -172,7 +170,7 @@ CREATE TABLE `offers` (
   `id_producto` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `offers_id_producto_foreign` (`id_producto`),
-  CONSTRAINT `offers_id_producto_foreign` FOREIGN KEY (`id_producto`) REFERENCES `products` (`id`)
+  CONSTRAINT `offers_id_producto_foreign` FOREIGN KEY (`id_producto`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -229,8 +227,8 @@ CREATE TABLE `payments` (
   `tipo` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `payments_id_usuario_foreign` (`id_usuario`),
-  CONSTRAINT `payments_id_usuario_foreign` FOREIGN KEY (`id_usuario`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  CONSTRAINT `payments_id_usuario_foreign` FOREIGN KEY (`id_usuario`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -239,7 +237,7 @@ CREATE TABLE `payments` (
 
 LOCK TABLES `payments` WRITE;
 /*!40000 ALTER TABLE `payments` DISABLE KEYS */;
-INSERT INTO `payments` VALUES (1,1,'marco antonio leon juarez','12343934333',12,12,887,'1'),(2,1,'marco antonio leon juarez','12343934333',12,12,887,'1'),(3,1,'marco antonio leon juarez','12343934333',12,12,887,'1'),(4,1,'marco antonio leon juarez','12343934333',12,12,887,'1'),(5,1,'marco antonio leon juarez','12343934333',12,12,887,'1'),(6,1,'marco antonio leon juarez','7867654354567',12,12,123,'1'),(7,1,'marco antonio leon juarez','7867654354567',12,12,123,'1'),(8,1,'marco antonio leon juarez','65675435678',12,12,123,'1'),(9,1,'marco antonio leon juarez','65675435678',12,12,123,'1'),(10,1,'marco antonio leon juarez','65675435678',12,12,123,'1'),(11,1,'marco antonio leon juarez','65675435678',12,12,123,'1'),(12,1,'marco antonio leon juarez','65675435678',12,12,123,'1'),(13,1,'marco antonio leon juarez','65675435678',12,12,123,'1'),(14,1,'marco antonio leon juarez','76546789123',12,12,123,'1'),(15,1,'marco antonio leon juarez','98767898767',12,12,123,'1');
+INSERT INTO `payments` VALUES (1,1,'marco antonio leon juarez','12343934333',12,12,887,'1'),(2,1,'marco antonio leon juarez','12343934333',12,12,887,'1'),(3,1,'marco antonio leon juarez','12343934333',12,12,887,'1'),(4,1,'marco antonio leon juarez','12343934333',12,12,887,'1'),(5,1,'marco antonio leon juarez','12343934333',12,12,887,'1'),(6,1,'marco antonio leon juarez','7867654354567',12,12,123,'1'),(7,1,'marco antonio leon juarez','7867654354567',12,12,123,'1'),(8,1,'marco antonio leon juarez','65675435678',12,12,123,'1'),(9,1,'marco antonio leon juarez','65675435678',12,12,123,'1'),(10,1,'marco antonio leon juarez','65675435678',12,12,123,'1'),(11,1,'marco antonio leon juarez','65675435678',12,12,123,'1'),(12,1,'marco antonio leon juarez','65675435678',12,12,123,'1'),(13,1,'marco antonio leon juarez','65675435678',12,12,123,'1'),(14,1,'marco antonio leon juarez','76546789123',12,12,123,'1'),(15,1,'marco antonio leon juarez','98767898767',12,12,123,'1'),(16,1,'marco antonio leon juarez','415627485476325',12,12,123,'1'),(17,1,'marco antonio leon juarez','123132123',12,12,123,'1'),(18,1,'marco antonio leon juarez','',0,0,0,'0'),(19,3,'','',0,0,0,'0'),(20,4,'','',0,0,0,'0'),(21,5,'','',0,0,0,'0'),(22,5,'','',0,0,0,'0'),(23,1,'Ma Eugenia Juarez Barron ','8765678987654',14,2012,312,'3');
 /*!40000 ALTER TABLE `payments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -269,9 +267,22 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (5,'Vestido Rojo',500.00,1,'Marcosh','Vestido de noche rojo con liston en la cintura',10,'/images/vestido1.jpg'),(6,'Vestido Lunares',500.00,1,'Heeeli','Vestido rojo con lunares negros y liston negro',2,'/images/vestido2.jpg'),(7,'Vestido Esmeralda',600.00,1,'Marcosh','Vestido verde para toda ocasion',2,'/images/vestido3.jpg'),(8,'Vestido Negro',700.00,1,'Marca X','Vestido de Noche',5,'/images/vestido4.jpg'),(9,'Vestido Plateado',600.00,1,'Marca X','Vestido de Noche',7,'/images/vestido5.jpg'),(10,'Vestido Azul y Negro',900.00,1,'Marca X','Vestido de Noche',9,'/images/vestido6.jpg'),(11,'Bolsa 1',900.00,2,'Marca Bolsas','Bolsa amplia, colores claros',3,'/images/bolsa1.jpg'),(12,'Bolsa 2',900.00,2,'Marca Bolsas','Bolsa amplia, colores claros',5,'/images/bolsa2.jpg'),(13,'Bolsa 3',750.00,2,'Marca Bolsas','Bolsa amplia, colores claros',3,'/images/bolsa3.jpg'),(14,'Bolsa 4',800.00,2,'Marca Bolsas','Bolsa amplia, colores claros',5,'/images/bolsa4.jpg'),(15,'Bolsa 5',900.00,2,'Marca Bolsas','Bolsa amplia, colores claros',3,'/images/bolsa5.jpg'),(16,'Bolsa 6',850.00,2,'Marca Bolsas','Bolsa amplia, colores claros',5,'/images/bolsa6.jpg'),(17,'Lentes 1',400.00,3,'Marca Lentes','Lentes de sol',2,'/images/lentes1.jpg'),(18,'Lentes 2',350.00,3,'Marca Lentes','Lentes de sol',3,'/images/lentes2.jpg'),(19,'Lentes 3',500.00,3,'Marca Lentes','Lentes de sol',4,'/images/lentes3.jpg'),(20,'Lentes 4',200.00,3,'Marca Lentes','Lentes de sol',5,'/images/lentes4.jpg'),(21,'Lentes 5',400.00,3,'Marca Lentes','Lentes de sol',6,'/images/lentes5.jpg'),(22,'Lentes 6',300.00,3,'Marca Lentes','Lentes de sol',4,'/images/lentes6.jpg'),(23,'Porducto 1',200.00,4,'Marca Productos de Belleza','Cremas y cepillos',3,'/images/pdb1.jpg'),(24,'Porducto 2',300.00,4,'Marca Productos de Belleza','Cremas y cepillos',4,'/images/pdb2.jpg'),(25,'Porducto 3',250.00,4,'Marca Productos de Belleza','Cremas y cepillos',5,'/images/pdb3.jpg'),(26,'Porducto 4',350.00,4,'Marca Productos de Belleza','Cremas y cepillos',2,'/images/pdb4.jpg'),(27,'Porducto 5',400.00,4,'Marca Productos de Belleza','Cremas y cepillos',6,'/images/pdb5.jpg'),(28,'Porducto 6',180.00,4,'Marca Productos de Belleza','Cremas y cepillos',3,'/images/pdb6.jpg'),(29,'Porducto 7',200.00,4,'Marca Productos de Belleza','Cremas y cepillos',4,'/images/pdb7.jpg'),(30,'Porducto 8',300.00,4,'Marca Productos de Belleza','Cremas y cepillos',5,'/images/pdb8.png'),(31,'Vestido 7',900.00,1,'Marcosh','Vestido para toda ocasion',10,'/images/vestido7.jpg'),(32,'Vestido 8',800.00,1,'Heliii','Vestido para toda ocasion',10,'/images/vestido8.jpg'),(33,'Vestido 9',1000.00,1,'Brayanttl','Vestido para toda ocasion',10,'/images/vestido9.jpg'),(34,'Vestido 10',900.00,1,'Marcosh','Vestido para toda ocasion',10,'/images/vestido10.jpg'),(35,'Vestido 11',800.00,1,'Heliii','Vestido para toda ocasion',10,'/images/vestido11.jpg'),(36,'Vestido 12',1000.00,1,'Brayanttl','Vestido para toda ocasion',10,'/images/vestido12.jpg'),(37,'Bolsa7',1000.00,2,'Marcosh','Bolsas para toda ocasion',5,'/images/bolsa7.jpg'),(38,'Bolsa8',1050.00,2,'Heliii','Bolsas para toda ocasion',5,'/images/bolsa8.jpg'),(39,'Bolsa9',1100.00,2,'Brayanttl','Bolsas para toda ocasion',5,'/images/bolsa9.jpg'),(40,'Bolsa10',1150.00,2,'Marcosh','Bolsas para toda ocasion',5,'/images/bolsa10.jpg'),(41,'Bolsa11',1200.00,2,'Heliii','Bolsas para toda ocasion',5,'/images/bolsa11.jpg'),(42,'Bolsa12',1250.00,2,'Brayanttl','Bolsas para toda ocasion',5,'/images/bolsa12.jpg'),(43,'Bolsa13',1300.00,2,'Marcosh','Bolsas para toda ocasion',5,'/images/bolsa13.jpg'),(44,'Bolsa14',1350.00,2,'Heliii','Bolsas para toda ocasion',5,'/images/bolsa14.jpg'),(45,'Lentes7',300.00,3,'Lacoste','Lentes para toda ocasion',6,'/images/lentes7.jpg'),(46,'Lentes8',400.00,3,'Prada','Lentes para toda ocasion',7,'/images/lentes8.jpg'),(47,'Lentes9',500.00,3,'D&G','Lentes para toda ocasion',8,'/images/lentes9.png'),(48,'Lentes10',600.00,3,'Lacoste','Lentes para toda ocasion',9,'/images/lentes10.jpg'),(49,'Lentes11',700.00,3,'Prada','Lentes para toda ocasion',10,'/images/lentes11.jpg'),(50,'Lentes12',800.00,3,'D&G','Lentes para toda ocasion',11,'/images/lentes12.jpg'),(51,'Lentes13',900.00,3,'Lacoste','Lentes para toda ocasion',12,'/images/lentes13.jpg'),(52,'Lapiz Labial 1',200.00,4,'Avon','Lapiz Labial para toda ocasion',10,'/images/pdb9.png'),(53,'Lapiz Labial 2',200.00,4,'Mary Kay','Lapiz Labial para toda ocasion',11,'/images/pdb10.jpg'),(54,'Lapiz Labial 3',200.00,4,'Avon','Lapiz Labial para toda ocasion',12,'/images/pdb11.jpg'),(55,'Lapiz Labial 4',200.00,4,'Mary Kay','Lapiz Labial para toda ocasion',13,'/images/pdb12.jpg'),(56,'Lapiz Labial 5',200.00,4,'Avon','Lapiz Labial para toda ocasion',14,'/images/pdb13.png');
+INSERT INTO `products` VALUES (5,'Vestido Rojo',500.00,1,'Marcosh','Vestido de noche rojo con liston en la cintura',10,'/images/vestido1.jpg'),(6,'Vestido Lunares',500.00,1,'Heeeli','Vestido rojo con lunares negros y liston negro',4,'/images/vestido2.jpg'),(7,'Vestido Esmeralda',600.00,1,'Marcosh','Vestido verde para toda ocasion',10,'/images/vestido3.jpg'),(8,'Vestido Negro',700.00,1,'Marca X','Vestido de Noche',9,'/images/vestido4.jpg'),(9,'Vestido Plateado',600.00,1,'Marca X','Vestido de Noche',10,'/images/vestido5.jpg'),(10,'Vestido Azul y Negro',900.00,1,'Marca X','Vestido de Noche',12,'/images/vestido6.jpg'),(11,'Bolsa 1',900.00,2,'Marca Bolsas','Bolsa amplia, colores claros',14,'/images/bolsa1.jpg'),(12,'Bolsa 2',900.00,2,'Marca Bolsas','Bolsa amplia, colores claros',25,'/images/bolsa2.jpg'),(13,'Bolsa 3',750.00,2,'Marca Bolsas','Bolsa amplia, colores claros',40,'/images/bolsa3.jpg'),(14,'Bolsa 4',800.00,2,'Marca Bolsas','Bolsa amplia, colores claros',15,'/images/bolsa4.jpg'),(15,'Bolsa 5',900.00,2,'Marca Bolsas','Bolsa amplia, colores claros',9,'/images/bolsa5.jpg'),(16,'Bolsa 6',850.00,2,'Marca Bolsas','Bolsa amplia, colores claros',10,'/images/bolsa6.jpg'),(17,'Lentes 1',400.00,3,'Marca Lentes','Lentes de sol',20,'/images/lentes1.jpg'),(18,'Lentes 2',350.00,3,'Marca Lentes','Lentes de sol',19,'/images/lentes2.jpg'),(19,'Lentes 3',500.00,3,'Marca Lentes','Lentes de sol',30,'/images/lentes3.jpg'),(20,'Lentes 4',200.00,3,'Marca Lentes','Lentes de sol',25,'/images/lentes4.jpg'),(21,'Lentes 5',400.00,3,'Marca Lentes','Lentes de sol',10,'/images/lentes5.jpg'),(22,'Lentes 6',300.00,3,'Marca Lentes','Lentes de sol',11,'/images/lentes6.jpg'),(23,'Porducto 1',200.00,4,'Marca Productos de Belleza','Cremas y cepillos',12,'/images/pdb1.jpg'),(24,'Porducto 2',300.00,4,'Marca Productos de Belleza','Cremas y cepillos',13,'/images/pdb2.jpg'),(25,'Porducto 3',250.00,4,'Marca Productos de Belleza','Cremas y cepillos',10,'/images/pdb3.jpg'),(26,'Porducto 4',350.00,4,'Marca Productos de Belleza','Cremas y cepillos',15,'/images/pdb4.jpg'),(27,'Porducto 5',400.00,4,'Marca Productos de Belleza','Cremas y cepillos',15,'/images/pdb5.jpg'),(28,'Porducto 6',180.00,4,'Marca Productos de Belleza','Cremas y cepillos',14,'/images/pdb6.jpg'),(29,'Porducto 7',200.00,4,'Marca Productos de Belleza','Cremas y cepillos',13,'/images/pdb7.jpg'),(30,'Porducto 8',300.00,4,'Marca Productos de Belleza','Cremas y cepillos',12,'/images/pdb8.png'),(31,'Vestido 7',900.00,1,'Marcosh','Vestido para toda ocasion',11,'/images/vestido7.jpg'),(32,'Vestido 8',800.00,1,'Heliii','Vestido para toda ocasion',10,'/images/vestido8.jpg'),(33,'Vestido 9',1000.00,1,'Brayanttl','Vestido para toda ocasion',10,'/images/vestido9.jpg'),(34,'Vestido 10',900.00,1,'Marcosh','Vestido para toda ocasion',10,'/images/vestido10.jpg'),(35,'Vestido 11',800.00,1,'Heliii','Vestido para toda ocasion',10,'/images/vestido11.jpg'),(36,'Vestido 12',1000.00,1,'Brayanttl','Vestido para toda ocasion',10,'/images/vestido12.jpg'),(37,'Bolsa7',1000.00,2,'Marcosh','Bolsas para toda ocasion',20,'/images/bolsa7.jpg'),(38,'Bolsa8',1050.00,2,'Heliii','Bolsas para toda ocasion',19,'/images/bolsa8.jpg'),(39,'Bolsa9',1100.00,2,'Brayanttl','Bolsas para toda ocasion',18,'/images/bolsa9.jpg'),(40,'Bolsa10',1150.00,2,'Marcosh','Bolsas para toda ocasion',17,'/images/bolsa10.jpg'),(41,'Bolsa11',1200.00,2,'Heliii','Bolsas para toda ocasion',16,'/images/bolsa11.jpg'),(42,'Bolsa12',1250.00,2,'Brayanttl','Bolsas para toda ocasion',15,'/images/bolsa12.jpg'),(43,'Bolsa13',1300.00,2,'Marcosh','Bolsas para toda ocasion',14,'/images/bolsa13.jpg'),(44,'Bolsa14',1350.00,2,'Heliii','Bolsas para toda ocasion',13,'/images/bolsa14.jpg'),(45,'Lentes7',300.00,3,'Lacoste','Lentes para toda ocasion',12,'/images/lentes7.jpg'),(46,'Lentes8',400.00,3,'Prada','Lentes para toda ocasion',11,'/images/lentes8.jpg'),(47,'Lentes9',500.00,3,'D&G','Lentes para toda ocasion',19,'/images/lentes9.png'),(48,'Lentes10',600.00,3,'Lacoste','Lentes para toda ocasion',9,'/images/lentes10.jpg'),(49,'Lentes11',700.00,3,'Prada','Lentes para toda ocasion',10,'/images/lentes11.jpg'),(50,'Lentes12',800.00,3,'D&G','Lentes para toda ocasion',11,'/images/lentes12.jpg'),(51,'Lentes13',900.00,3,'Lacoste','Lentes para toda ocasion',9,'/images/lentes13.jpg'),(52,'Lapiz Labial 1',200.00,4,'Avon','Lapiz Labial para toda ocasion',10,'/images/pdb9.png'),(53,'Lapiz Labial 2',200.00,4,'Mary Kay','Lapiz Labial para toda ocasion',11,'/images/pdb10.jpg'),(54,'Lapiz Labial 3',200.00,4,'Avon','Lapiz Labial para toda ocasion',12,'/images/pdb11.jpg'),(55,'Lapiz Labial 4',200.00,4,'Mary Kay','Lapiz Labial para toda ocasion',13,'/images/pdb12.jpg'),(56,'Lapiz Labial 5',200.00,4,'Avon','Lapiz Labial para toda ocasion',14,'/images/pdb13.png');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary view structure for view `sexoclientes`
+--
+
+DROP TABLE IF EXISTS `sexoclientes`;
+/*!50001 DROP VIEW IF EXISTS `sexoclientes`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `sexoclientes` AS SELECT 
+ 1 AS `count(id)`,
+ 1 AS `sexo`*/;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Table structure for table `states`
@@ -319,7 +330,7 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -328,13 +339,31 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Marco Antonio','paramore_malj@outlook.com','$2y$10$UxHt8yOwx6M6ECfyDzOWBuA7h0nEU/Hx75hgu.SPwxFaILN6q/FIu','Leon Juarez','4491974531',0,'hombre','16 October, 2016','dSH3q9xg3gSw2TwMNEbsTO4QNPgpWSV1HRhC2hkDjr2VT2DF5ZLOusAqkV7Y','2016-10-16 21:06:01','2016-10-17 22:28:28'),(2,'Heli ','heligutierrez_email@outlook.com','$2y$10$1YfmQoL97wUbv5naTviZEuT1xGadXyyyE/bOhs3/jPUiP4yyYXs3i','Gtz Almanza','668997655',0,'hombre','16 October, 2016','qdR9IngNXIbGrT3uBUSu3Hcz7xCvhG5raEmNmJRnY4gTisLCvKhjjK5qEeA7','2016-10-17 00:06:35','2016-10-17 00:11:38');
+INSERT INTO `users` VALUES (1,'Marco Antonio','paramore_malj@outlook.com','$2y$10$UxHt8yOwx6M6ECfyDzOWBuA7h0nEU/Hx75hgu.SPwxFaILN6q/FIu','Leon Juarez','4491974531',1,'hombre','16 October, 2016','qUXVEn7DFmKfeLnW1jsqYfq6n0zVi8ISZ47s4uYoAD3vWXcVhyQY4XNtOnf4','2016-10-16 21:06:01','2016-11-22 03:50:42'),(2,'Heli ','heligutierrez_email@outlook.com','$2y$10$1YfmQoL97wUbv5naTviZEuT1xGadXyyyE/bOhs3/jPUiP4yyYXs3i','Gtz Almanza','668997655',0,'hombre','16 October, 2016','tu7svUKoyDgaEcSknxtKn6LIJOVGekCWnvUA00bbXmOhIZvr44hVIqf8NTw9','2016-10-17 00:06:35','2016-11-06 22:38:29'),(3,'Elver','mequedaclaro@gmail.com','$2y$10$nS198RNDpGMUGLCxANSWveqGcCdgVOLdNBCqd7wKR8ZVWp6PMrOQS','Galarga','69dsfsdf',0,'hombre','23 October, 2008','vDpbQjkw4JEOtmYWOXgZzcRTlR4fpu21TsvW7O9MZ6GVN9HL1v39Tpkv1GGA','2016-10-24 20:54:52','2016-10-24 22:49:21'),(4,'Heli','heli-gtz@outlook.com','$2y$10$DVk.Js/TsoBYTc7eRR.MzOY5Eqsf3rIzxS1IQNh7nhm.j6K/9Glmm','Gutierrez','4492882497',0,'hombre','28 October, 2016','M5os2QxZOUTOeJlXTI5HdCHoftAb3KrUcjINpsGKCvianxSvE0gZOAwcTcnq','2016-10-25 00:10:18','2016-10-25 00:12:50'),(5,'jorge','jorge@hotmail.com','$2y$10$ISegQhYWEGMnmtx4gWLJQ.26pASa2iIneYKCD.qzLPT2toBxVvE7S','ramirez','234562345',0,'hombre','21 October, 2016',NULL,'2016-10-25 00:29:09','2016-10-25 00:29:09'),(6,'Maria Eugenia','maria_eugenia@yahoo.com.mx','$2y$10$74oKzBMFYGfv4rxLQ9u2huLqiR2chobNH5Vryfu2zkYFfVuZPXtDq','Juarez Barron','9876789',0,'mujer','3 May, 2016','QfdBtzd2fHVLWRcqIWrBotgOJWlxpOZPpNrgph5sQNwcJy8MPSQfGlRqWZAn','2016-11-05 20:17:45','2016-11-05 20:47:18'),(7,'Rojini','rojini@ejemplo.com','$2y$10$Cul7OF3jNdqCv6wUWv9sxuwofo73rGNbMn3L82A8LrJSdDaCSNVPG','Gonzalini','5555555',0,'hombre','25 August, 2016','XOYYntqb0mDOwHGyMhuVC2n77qi3T11TyMhWbDRFVLxP4ewGlpxu4FEfmodr','2016-11-16 21:49:20','2016-11-16 21:54:06');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
 -- Dumping routines for database 'pinkfeelin'
 --
+
+--
+-- Final view structure for view `sexoclientes`
+--
+
+/*!50001 DROP VIEW IF EXISTS `sexoclientes`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `sexoclientes` AS select count(`users`.`id`) AS `count(id)`,`users`.`sexo` AS `sexo` from `users` where (`users`.`tipo` = '0') group by `users`.`sexo` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -345,4 +374,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-10-22 17:51:16
+-- Dump completed on 2016-11-26 22:07:31
