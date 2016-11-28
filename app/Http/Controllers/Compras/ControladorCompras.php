@@ -49,21 +49,21 @@ class ControladorCompras extends Controller
     {
         //
         \pinkfeelin\Models\User\Address::create([
-           'estado' => $request['estado'],
-           'ciudad' => $request['ciudad'],
-           'colonia' => $request['colonia'],
-           'calle' => $request['calle'],
-           'numero' => $request['numero'],
-           'cp' => $request['cp'],
+           'estado' => bcrypt($request['estado']),
+           'ciudad' => bcrypt($request['ciudad']),
+           'colonia' => bcrypt($request['colonia']),
+           'calle' => bcrypt($request['calle']),
+           'numero' => bcrypt($request['numero']),
+           'cp' => bcrypt($request['cp']),
            'id_usuario' => $request['id_usuario'],
        ]);
         \pinkfeelin\Models\User\Payment::create([
          'id_usuario' =>$request['id_usuario'],
-         'nombre' =>$request['nombre'],
-         'numero' =>$request['numero_tarjeta'],
-         'mes_exp' =>$request['mes_exp'],
-         'año_exp' =>$request['año_exp'],
-         'codigo' =>$request['codigo'],
+         'nombre' =>bcrypt($request['nombre']),
+         'numero' =>bcrypt($request['numero_tarjeta']),
+         'mes_exp' =>bcrypt($request['mes_exp']),
+         'año_exp' =>bcrypt($request['año_exp']),
+         'codigo' =>bcrypt($request['codigo']),
          'tipo' =>$request['tipo'],
        ]);
        $buy= new \pinkfeelin\Models\Buy\Buy;
